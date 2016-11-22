@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".user_profile.user_info.basic_info.RegisterBasicProfileScreen"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fitsSystemWindows="true"
+    android:background="@drawable/teal_bg">
+
+    <fragment
+        android:id="@+id/registerBasicProfileFrag"
+        android:name="com.example.home.makemebeautiful.user_profile.user_info.basic_info.RegisterBasicProfileViewFrag"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

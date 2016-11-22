@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+   >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/user_details_in_chat_background">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/profileImageInChat"
+            android:layout_gravity="right"
+            android:scaleType="centerCrop"
+            app:civ_border_color="@color/md_white_1000"
+            app:civ_border_width="1dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            />
+
+        <TextView
+            android:id="@+id/userNameInChat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Name"
+            android:layout_gravity="right"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/profileImageInChat"
+            android:layout_toEndOf="@+id/profileImageInChat"
+            android:paddingLeft="5dp" />
+
+        <TextView
+            android:id="@+id/userLocationInChat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Location"
+            android:layout_below="@+id/userNameInChat"
+            android:layout_toRightOf="@+id/profileImageInChat"
+            android:paddingLeft="5dp" />
+    </RelativeLayout>
+</LinearLayout>

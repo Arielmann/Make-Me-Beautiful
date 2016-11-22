@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+>
+
+    <ImageButton
+        android:id="@+id/presentedImageLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        android:layout_alignParentLeft="false"
+        android:adjustViewBounds="true"
+        android:background="@color/md_white_1000"
+        android:padding="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentEnd="true" />
+        />
+
+</RelativeLayout>

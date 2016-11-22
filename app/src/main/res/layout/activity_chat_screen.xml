@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/chatFrameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/teal_bg">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="50">
+
+
+            <!--<fragment
+                android:id="@+id/addressedUserChatDetailsFrag"
+                android:name="com.example.home.makemebeautiful.chat.fragments.AddressedUserChatDetailsFrag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+-->
+            <fragment
+                android:id="@+id/messagesPresenterFrag"
+                android:name="com.example.home.makemebeautiful.chat.fragments.ChatFrag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_weight="1">
+
+            <fragment
+                android:id="@+id/messageComponentFrag"
+                android:name="com.example.home.makemebeautiful.chat.fragments.MessagesRowFrag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+             />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>
+

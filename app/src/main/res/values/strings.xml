@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Make Me Beautiful</string>
+    <string name="drawer_item_home">Make Me Beautiful</string>
+    <string name="drawer_item_messages">Messages</string>
+    <string name="drawer_item_sendPhoto">Send a photo</string>
+    <string name="drawer_item_settings">Settings</string>
+</resources>
