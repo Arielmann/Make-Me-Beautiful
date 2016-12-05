@@ -45,7 +45,7 @@ public class ChatTextMessagesController extends IChatController {
     public void saveAddressedUserToTable(ChatItem item) {
         //if the contact user doesn't exists on the db (his name == null), save it.
         String addressedUserName = model.getAddressedUser().getName();
-        boolean userIsInSingleton = ContactedUsersRowsHashMap.getInstance().userIsInDataBase(model.getContext(), addressedUserName);
+        boolean userIsInSingleton = ContactedUsersRowsHashMap.getInstance().IsUserInDataBase(model.getContext(), addressedUserName);
         if (userIsInSingleton){
             //IMPORTANT: user MUST be in contacts Singleton at this point
             ContactedUsersRowsHashMap.getInstance().getHashMap().get(addressedUserName).setLastMessageAsText(item);

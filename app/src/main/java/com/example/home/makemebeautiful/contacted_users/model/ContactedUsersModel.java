@@ -31,7 +31,7 @@ public class ContactedUsersModel {
     private static ContactedUsersAdapter adapter;
     private static LinearLayoutManager layoutManager;
     private static ContactedUsersModel contactedUsersModel;
-    private static List<ContactedUserRow> dataSet = new ArrayList();
+    private static List<ContactedUserRow> dataSet = new ArrayList<>();
     private static Context context;
 
     public static ContactedUsersModel getInstance(Context insideMethodContext) {
@@ -62,7 +62,7 @@ public class ContactedUsersModel {
         }
     }
 
-    public static List<ContactedUserRow> initDataSet() { //Since singleton hashMap is use to determine dataSet, each change in the hasmap has to provoke this method
+    public static List<ContactedUserRow> initDataSet() { //Since singleton hashMap is used to determine dataSet, each change in the hashMap has to provoke this method
         dataSet.clear();
         HashMap<String, ContactedUserRow> hashMap = ContactedUsersRowsHashMap.getInstance().getHashMap();
         if (!hashMap.isEmpty()) {

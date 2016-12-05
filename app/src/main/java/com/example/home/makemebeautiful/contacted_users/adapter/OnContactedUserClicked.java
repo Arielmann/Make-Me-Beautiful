@@ -40,6 +40,6 @@ public class OnContactedUserClicked implements View.OnClickListener{
         Intent chatScreenIntent = new Intent(context, ChatScreen.class);
         chatScreenIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         EventBus.getDefault().postSticky(addressedStylist);
-        context.startActivity(chatScreenIntent); //TODO: disable click after first time, else it search database twice (רחמנא ליצלן)
+        context.startActivity(chatScreenIntent);
     }
 }

@@ -23,7 +23,7 @@ public class AllConversationsHashMap {
     * */
 
 
-    private static AllConversationsHashMap allConversationsArray = new AllConversationsHashMap();
+    private static AllConversationsHashMap allConversationsHashMap = new AllConversationsHashMap();
 
     public HashMap<String, List<ChatItem>> getHashMap() {
         return conversationsHashMap;
@@ -36,10 +36,10 @@ public class AllConversationsHashMap {
     }
 
     public static AllConversationsHashMap getInstance() { // NOT A CONSTRUCTOR
-        if (allConversationsArray == null) {
-            allConversationsArray = new AllConversationsHashMap();
+        if (allConversationsHashMap == null) {
+            allConversationsHashMap = new AllConversationsHashMap();
         }
-        return allConversationsArray;
+        return allConversationsHashMap;
     }
 
 
