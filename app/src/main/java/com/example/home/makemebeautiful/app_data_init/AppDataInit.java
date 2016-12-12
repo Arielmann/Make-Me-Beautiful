@@ -34,16 +34,8 @@ public class AppDataInit {
 
     public static void readStylistsFromServer(Activity activity) throws ExecutionException, InterruptedException {
         //**********************Start downloading Stylists from server*********//
-        ReadStylistsFromServer reader = null;
-
         if (ChooseStylistModel.getInstance(activity).getStylistsFromServer().isEmpty()) {
-            try {
-                reader = new ReadStylistsFromServer(activity, ChooseStylistModel.getInstance(activity));
-            } catch (ExecutionException e) {
-
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            ReadStylistsFromServer reader = new ReadStylistsFromServer(activity, ChooseStylistModel.getInstance(activity));
             reader.start();
         }
     }

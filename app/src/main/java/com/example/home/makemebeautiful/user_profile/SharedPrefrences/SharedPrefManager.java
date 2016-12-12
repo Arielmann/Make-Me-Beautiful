@@ -32,23 +32,23 @@ public class SharedPrefManager {
     * */
 
     // private static ImageArray sharedPrefs = new ImageArray();
-    private static SharedPrefManager sharedPrefs;
+    private static SharedPrefManager instance;
     private SharedPreferences insideSharedPref;
     private int notificationsCounter;
     private Bitmap userImageBitmap = ImageUtils.defaultProfileImage;
-    private String ACCOUNT_INFO = "Account info";
 
     //creates the only instance
-    private SharedPrefManager(Context context) {
-        insideSharedPref = context.getSharedPreferences(ACCOUNT_INFO, Context.MODE_PRIVATE);
+    private SharedPrefManager(SharedPreferences sharedPreferences) {
+        insideSharedPref = sharedPreferences;
     }
 
     // prevents creating of instances
     public static SharedPrefManager getInstance(Context context) { // create a static common database
-        if (sharedPrefs == null) {
-            sharedPrefs = new SharedPrefManager(context);
+        if (instance == null) {
+            SharedPreferences sharedPreferences = context.getSharedPreferences("Account info", Context.MODE_PRIVATE);
+            instance = new SharedPrefManager(sharedPreferences);
         }
-        return sharedPrefs;
+        return instance;
     }
 
     public SharedPreferences getSharedPrefs() {

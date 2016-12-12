@@ -22,7 +22,7 @@ public class ChooseStylistViewFrag extends Fragment {
     private ChooseStylistModel model;
 
 
-    public void setFragData() throws ExecutionException, InterruptedException {
+    public void setFragData() {
         model = ChooseStylistModel.getInstance(getActivity());
         recyclerView.setLayoutManager(model.getLayoutManager());
         recyclerView.setAdapter(model.getAdapter());

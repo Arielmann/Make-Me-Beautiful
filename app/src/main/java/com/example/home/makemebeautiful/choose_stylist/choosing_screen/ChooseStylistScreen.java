@@ -17,12 +17,6 @@ public class ChooseStylistScreen extends AppCompatActivity {
         ToolbarFrag toolbar = (ToolbarFrag) getSupportFragmentManager().findFragmentById(R.id.toolbarFragInChooseStylistScreen);
         toolbar.createDrawer();
         ChooseStylistViewFrag chooseStylistFrag = (ChooseStylistViewFrag) getSupportFragmentManager().findFragmentById(R.id.chooseStylistFrag);
-        try {
-            chooseStylistFrag.setFragData();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        chooseStylistFrag.setFragData();
     }
 }

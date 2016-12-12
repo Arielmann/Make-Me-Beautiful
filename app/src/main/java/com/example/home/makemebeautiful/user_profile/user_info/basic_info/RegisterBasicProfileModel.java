@@ -20,9 +20,11 @@ import java.util.Map;
  * Created by home on 6/6/2016.
  */
 public class RegisterBasicProfileModel extends GenericSettingsModel {
-    private String name;
-    private String password;
-    private String location;
+
+    public static final String NAME = "name";
+    public static final String PASSWORD = "password";
+    public static final String LOCATION = "location";
+    public static final String NAME_ERROR = "nameError";
 
     public RegisterBasicProfileModel(Fragment signUpView) {
         super(signUpView);
@@ -33,19 +35,18 @@ public class RegisterBasicProfileModel extends GenericSettingsModel {
     public void validate(HashMap<String, String> userInputs) {
         //TODO: check if name OR location already exists in the server's DB
         setUserInputs(userInputs);
-        name = userInputs.get("name");
-        password = userInputs.get("password");
-        location = userInputs.get("location");
-
+        String name = userInputs.get(NAME);
+        String password = userInputs.get(PASSWORD);
+        String location = userInputs.get(LOCATION);
 
         if (name.length() < 3) {
-            getErrors().put("nameError", "At least 3 characters");
+            getErrors().put(NAME_ERROR, "At least 3 characters");
             onDataChangeFailed();
             return;
         }
 
         if(name.equals("user name error")){
-            getErrors().put("nameError", "Invalid name");
+            getErrors().put(NAME_ERROR, "Invalid name");
             onDataChangeFailed();
             return;
         }
@@ -82,7 +83,6 @@ public class RegisterBasicProfileModel extends GenericSettingsModel {
         getErrors().clear();
     }
 
-
     private void goToNextScreenWithProgressDialog() {
         GoToScreen goToSetDescriptionScreen = new GoToScreen((Activity) getContext(), SetDescriptionScreen.class, "Creating Account...");
         goToSetDescriptionScreen.goToScreenWithProgressDialog.onClick(null);
@@ -108,18 +108,18 @@ public class RegisterBasicProfileModel extends GenericSettingsModel {
         }
     }
 
-       private void saveScreenSizesToSharedPref(Activity activity) {
-            Display display = activity.getWindowManager().getDefaultDisplay();
-            Point size = new Point();
-            display.getSize(size);
-            int width = size.x;
-            int height = size.y;
-            SharedPrefManager.getInstance(activity).saveIntInfoToSharedPreferences(activity, "deviceScreenHeight", height);
-            SharedPrefManager.getInstance(activity).saveIntInfoToSharedPreferences(activity, "deviceScreenWidth", width);
-        }
+    private void saveScreenSizesToSharedPref(Activity activity) {
+        Display display = activity.getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        int width = size.x;
+        int height = size.y;
+        SharedPrefManager.getInstance(activity).saveIntInfoToSharedPreferences(activity, "deviceScreenHeight", height);
+        SharedPrefManager.getInstance(activity).saveIntInfoToSharedPreferences(activity, "deviceScreenWidth", width);
     }
+}
 
-    //*****Login******//
+//*****Login******//
 
    /*  loginLink.setOnClickListener(new View.OnClickListener() {
             @Override

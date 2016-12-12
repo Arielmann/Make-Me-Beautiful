@@ -47,13 +47,7 @@ public class ReadStylistsFromServer extends Thread {
     Runnable notifyDataSetChangedInMainThread = new Runnable() {
         @Override
         public void run() {
-            try {
-                ChooseStylistModel.getInstance(null).getAdapter().notifyDataSetChanged();
-            } catch (ExecutionException e) {
-                e.printStackTrace();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            ChooseStylistModel.getInstance(null).getAdapter().notifyDataSetChanged();
         }
     };
 

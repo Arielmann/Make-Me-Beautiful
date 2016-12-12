@@ -1,6 +1,5 @@
 package com.example.home.makemebeautiful.user_profile.user_info.basic_info;
 
-import android.app.ProgressDialog;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,30 +10,32 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.home.makemebeautiful.user_profile.user_info.GenericSettingsFrag;
 import com.example.home.makemebeautiful.R;
+import com.example.home.makemebeautiful.user_profile.user_info.GenericSettingsFrag;
 import com.example.home.makemebeautiful.user_profile.user_info.SetViewsAfterSignUpClicked;
 
 import java.util.HashMap;
+
+import static com.example.home.makemebeautiful.user_profile.user_info.basic_info.RegisterBasicProfileModel.*;
 
 /**
  * Created by home on 8/5/2016.
  */
 public class RegisterBasicProfileViewFrag extends GenericSettingsFrag implements View.OnClickListener, SetViewsAfterSignUpClicked {
-    private static final String TAG = "SignUpFragment";
+    private static final String TAG = RegisterBasicProfileViewFrag.class.getName();
     private EditText nameEditText;
     private EditText passwordEditText;
     private EditText locationEditText;
     private Button signUpButton;
-    private TextView loginLink;
-    private ProgressDialog progressDialog;
+//    private TextView loginLink;
+//    private ProgressDialog progressDialog;
 
     @Override
     public void tryToUpdateData() {
         HashMap<String, String> userInputs = new HashMap<>();
-        userInputs.put("name", nameEditText.getText().toString());
-        userInputs.put("password", passwordEditText.getText().toString());
-        userInputs.put("location", locationEditText.getText().toString());
+        userInputs.put(NAME, nameEditText.getText().toString());
+        userInputs.put(PASSWORD, passwordEditText.getText().toString());
+        userInputs.put(LOCATION, locationEditText.getText().toString());
         getModel().validate(userInputs);
     }
 
