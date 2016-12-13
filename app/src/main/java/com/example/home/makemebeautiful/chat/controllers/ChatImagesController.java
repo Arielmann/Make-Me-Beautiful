@@ -7,14 +7,14 @@ import android.util.Log;
 
 import com.example.home.makemebeautiful.chat.model.ChatDataModel;
 import com.example.home.makemebeautiful.chat.model.ChatItem;
-import com.example.home.makemebeautiful.contacted_users.model.ContactedUsersModel;
-import com.example.home.makemebeautiful.contacted_users.model.ContactedUsersRowsHashMap;
+import com.example.home.makemebeautiful.contactedusers.model.ContactedUsersModel;
+import com.example.home.makemebeautiful.contactedusers.model.ContactedUsersRowsHashMap;
 import com.example.home.makemebeautiful.image_providing.ImageUtils;
-import com.example.home.makemebeautiful.server_communication.OnImageUploadedToServer;
-import com.example.home.makemebeautiful.server_communication.SendMessagePushNotification;
-import com.example.home.makemebeautiful.server_communication.UploadData;
-import com.example.home.makemebeautiful.user_profile.SharedPrefrences.SharedPrefManager;
-import com.example.home.makemebeautiful.user_profile.profile_objects.Stylist;
+import com.example.home.makemebeautiful.servercommunication.OnImageUploadedToServer;
+import com.example.home.makemebeautiful.servercommunication.SendMessagePushNotification;
+import com.example.home.makemebeautiful.servercommunication.UploadData;
+import com.example.home.makemebeautiful.profile.sharedprefrences.SharedPrefManager;
+import com.example.home.makemebeautiful.profile.profilemodels.Stylist;
 
 /**
  * Created by home on 7/8/2016.

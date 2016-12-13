@@ -15,7 +15,7 @@ import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
 import com.example.home.makemebeautiful.R;
-import com.example.home.makemebeautiful.app_data_init.AppDataInit;
+import com.example.home.makemebeautiful.appinit.AppDataInit;
 import com.example.home.makemebeautiful.chat.ChatScreen;
 import com.example.home.makemebeautiful.chat.controllers.ChatImagesController;
 import com.example.home.makemebeautiful.chat.controllers.ChatTextMessagesController;
@@ -24,8 +24,8 @@ import com.example.home.makemebeautiful.chat.model.ChatItem;
 import com.example.home.makemebeautiful.chat.model.MessageItemsFromServer;
 import com.example.home.makemebeautiful.image_providing.ImageLoader;
 import com.example.home.makemebeautiful.image_providing.ImageUtils;
-import com.example.home.makemebeautiful.user_profile.SharedPrefrences.SharedPrefManager;
-import com.example.home.makemebeautiful.user_profile.profile_objects.Stylist;
+import com.example.home.makemebeautiful.profile.sharedprefrences.SharedPrefManager;
+import com.example.home.makemebeautiful.profile.profilemodels.Stylist;
 import com.google.android.gms.gcm.GcmReceiver;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 

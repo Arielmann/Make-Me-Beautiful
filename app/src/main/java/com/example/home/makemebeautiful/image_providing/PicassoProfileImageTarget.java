@@ -6,7 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
 
-import com.example.home.makemebeautiful.user_profile.profile_objects.Stylist;
+import com.example.home.makemebeautiful.profile.profilemodels.Stylist;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 

@@ -5,7 +5,7 @@ import android.graphics.Bitmap;
 import android.util.Log;
 
 import com.example.home.makemebeautiful.chat.model.ChatItem;
-import com.example.home.makemebeautiful.user_profile.profile_objects.Stylist;
+import com.example.home.makemebeautiful.profile.profilemodels.Stylist;
 
 import java.util.concurrent.ExecutionException;
 

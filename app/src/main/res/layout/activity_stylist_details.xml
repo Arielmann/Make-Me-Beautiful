@@ -4,11 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/teal_bg"
-    tools:context=".choose_stylist.stylist_details_screen.StylistDetailsScreen">
+    tools:context=".choosestylist.stylist_details_screen.StylistDetailsScreen">
 
     <fragment
         android:id="@+id/stylistDetailsFrag"
-        android:name="com.example.home.makemebeautiful.choose_stylist.stylist_details_screen.StylistDetailsFrag"
+        android:name="com.example.home.makemebeautiful.choosestylist.stylist_details_screen.StylistDetailsFrag"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"

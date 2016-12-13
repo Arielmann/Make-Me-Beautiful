@@ -8,11 +8,11 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@drawable/teal_bg"
-    tools:context=".choose_stylist.choosing_screen.ChooseStylistScreen">
+    tools:context=".choosestylist.choosing_screen.ChooseStylistScreen">
 
     <fragment
         android:id="@+id/toolbarFragInChooseStylistScreen"
-        android:name="com.example.home.makemebeautiful.toolbar_frag.ToolbarFrag"
+        android:name="com.example.home.makemebeautiful.toolbar.ToolbarFrag"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center">
@@ -20,7 +20,7 @@
 
     <fragment
         android:id="@+id/chooseStylistFrag"
-        android:name="com.example.home.makemebeautiful.choose_stylist.choosing_screen.ChooseStylistViewFrag"
+        android:name="com.example.home.makemebeautiful.choosestylist.choosing_screen.ChooseStylistViewFrag"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"

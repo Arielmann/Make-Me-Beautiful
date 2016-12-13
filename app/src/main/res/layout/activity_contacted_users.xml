@@ -5,11 +5,11 @@
     android:layout_height="match_parent"
     android:background="@drawable/teal_bg"
     android:orientation="vertical"
-    tools:context=".contacted_users.ContactedUsersScreen">
+    tools:context=".contactedusers.ContactedUsersScreen">
 
     <fragment
         android:id="@+id/toolbarFragInContactedUsers"
-        android:name="com.example.home.makemebeautiful.toolbar_frag.ToolbarFrag"
+        android:name="com.example.home.makemebeautiful.toolbar.ToolbarFrag"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"></fragment>

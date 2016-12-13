@@ -2,7 +2,7 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".user_profile.user_info.basic_info.RegisterBasicProfileScreen"
+    tools:context=".profile.registration.basic.RegisterBasicProfileScreen"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:fitsSystemWindows="true"
@@ -10,7 +10,7 @@
 
     <fragment
         android:id="@+id/registerBasicProfileFrag"
-        android:name="com.example.home.makemebeautiful.user_profile.user_info.basic_info.RegisterBasicProfileViewFrag"
+        android:name="com.example.home.makemebeautiful.profile.registration.basic.RegisterBasicProfileViewFrag"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"

@@ -8,8 +8,7 @@ import android.support.v4.app.Fragment;
 import android.widget.Toast;
 
 import com.example.home.makemebeautiful.image_providing.ImageUtils;
-import com.example.home.makemebeautiful.user_profile.SharedPrefrences.SharedPrefManager;
-import com.example.home.makemebeautiful.user_profile.profile_objects.Stylist;
+import com.example.home.makemebeautiful.profile.sharedprefrences.SharedPrefManager;
 
 import java.io.Serializable;
 

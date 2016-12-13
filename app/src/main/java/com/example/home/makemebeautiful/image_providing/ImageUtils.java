@@ -16,9 +16,9 @@ import com.bumptech.glide.request.target.SimpleTarget;
 import com.example.home.makemebeautiful.R;
 import com.example.home.makemebeautiful.chat.adapter.GenericViewHolder;
 import com.example.home.makemebeautiful.chat.model.ChatItem;
-import com.example.home.makemebeautiful.contacted_users.model.ContactedUserRow;
-import com.example.home.makemebeautiful.user_profile.SharedPrefrences.SharedPrefManager;
-import com.example.home.makemebeautiful.user_profile.profile_objects.Stylist;
+import com.example.home.makemebeautiful.contactedusers.model.ContactedUserRow;
+import com.example.home.makemebeautiful.profile.sharedprefrences.SharedPrefManager;
+import com.example.home.makemebeautiful.profile.profilemodels.Stylist;
 import com.squareup.picasso.Picasso;
 
 import java.io.File;

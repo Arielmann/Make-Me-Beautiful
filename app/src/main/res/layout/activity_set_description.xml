@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".user_profile.user_info.description.SetDescriptionScreen"
+    tools:context=".profile.registration.description.SetDescriptionScreen"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,7 +9,7 @@
 
     <fragment
         android:id="@+id/setDescriptionFrag"
-        android:name="com.example.home.makemebeautiful.user_profile.user_info.description.SetDescriptionViewFrag"
+        android:name="com.example.home.makemebeautiful.profile.registration.description.SetDescriptionViewFrag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

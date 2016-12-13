@@ -9,7 +9,7 @@ import android.util.Log;
 
 import com.example.home.makemebeautiful.chat.model.AllConversationsHashMap;
 import com.example.home.makemebeautiful.chat.model.ChatItem;
-import com.example.home.makemebeautiful.db_manager.DataBaseManager;
+import com.example.home.makemebeautiful.dbmanager.DataBaseManager;
 
 import java.util.ArrayList;
 import java.util.List;

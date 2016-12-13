@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@drawable/teal_bg"
-    tools:context=".welcome_screen.WelcomeScreen">
+    tools:context=".homescreen.WelcomeScreen">
 
     <!--<include
         android:id="@+id/customToolbar"
@@ -24,7 +24,7 @@
 
      <fragment
             android:id="@+id/toolbarFragInWelcomeScreen"
-            android:name="com.example.home.makemebeautiful.toolbar_frag.ToolbarFrag"
+            android:name="com.example.home.makemebeautiful.toolbar.ToolbarFrag"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

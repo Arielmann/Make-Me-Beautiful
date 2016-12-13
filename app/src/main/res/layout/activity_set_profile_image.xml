@@ -5,11 +5,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/teal_bg"
-    tools:context=".user_profile.user_info.user_profile_image.SetProfileImageScreen">
+    tools:context=".profile.registration.profileimage.SetProfileImageScreen">
 
     <fragment
         android:id="@+id/setProfileImageFrag"
-        class="com.example.home.makemebeautiful.user_profile.user_info.user_profile_image.SetProfileImageViewFrag"
+        class="com.example.home.makemebeautiful.profile.registration.profileimage.SetProfileImageViewFrag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"

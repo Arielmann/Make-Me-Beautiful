@@ -19,7 +19,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".welcome_screen.WelcomeScreen"
+            android:name=".homescreen.WelcomeScreen"
             android:launchMode="singleTop"
             android:screenOrientation="portrait">
             <intent-filter><action android:name="android.intent.action.MAIN" />
@@ -29,11 +29,11 @@
 
         </activity>
         <activity
-            android:name=".choose_stylist.choosing_screen.ChooseStylistScreen"
+            android:name=".choosestylist.choosing_screen.ChooseStylistScreen"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".choose_stylist.stylist_details_screen.StylistDetailsScreen"
+            android:name=".choosestylist.stylist_details_screen.StylistDetailsScreen"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
@@ -41,11 +41,11 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".user_profile.user_info.description.SetDescriptionScreen"
+            android:name=".profile.registration.description.SetDescriptionScreen"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".user_profile.user_info.user_profile_image.SetProfileImageScreen"
+            android:name=".profile.registration.profileimage.SetProfileImageScreen"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
@@ -53,12 +53,12 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".user_profile.user_info.basic_info.RegisterBasicProfileScreen"
+            android:name=".profile.registration.basic.RegisterBasicProfileScreen"
             android:launchMode="singleTop"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name=".contacted_users.ContactedUsersScreen"
+            android:name=".contactedusers.ContactedUsersScreen"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
 

@@ -22,8 +22,8 @@ import com.example.home.makemebeautiful.image_providing.ChooseImageProvider;
 import com.example.home.makemebeautiful.image_providing.ImageLoader;
 import com.example.home.makemebeautiful.image_providing.ImageUtils;
 import com.example.home.makemebeautiful.image_providing.fragments.FullScreenImageViewFrag;
-import com.example.home.makemebeautiful.user_profile.SharedPrefrences.SharedPrefManager;
-import com.example.home.makemebeautiful.user_profile.profile_objects.Stylist;
+import com.example.home.makemebeautiful.profile.sharedprefrences.SharedPrefManager;
+import com.example.home.makemebeautiful.profile.profilemodels.Stylist;
 
 import org.greenrobot.eventbus.EventBus;
 

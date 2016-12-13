@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 
 import com.example.home.makemebeautiful.R;
-import com.example.home.makemebeautiful.user_profile.SharedPrefrences.SharedPrefManager;
+import com.example.home.makemebeautiful.profile.sharedprefrences.SharedPrefManager;
 
 import java.io.Serializable;
 
