@@ -144,7 +144,7 @@ public class ContactedStylistTableReader extends SQLiteOpenHelper {
                 ContactedUserRow contactedUserRow = new ContactedUserRow(name, image, lastMessageDate, lastMessage);
 
                 // Adding stylist to list
-                ContactedUsersRowsHashMap.getInstance().getHashMap().put(name, contactedUserRow);
+                ContactedUsersRowsHashMap.getInstance().put(name, contactedUserRow);
                 Log.d("Contacted Users Reader", "row added to singleton: " + contactedUserRow.toString());
             } while (nameAndImageCursor.moveToNext());
         }

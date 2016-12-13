@@ -19,23 +19,23 @@ import java.util.concurrent.ExecutionException;
  */
 public class ChooseStylistModel implements OnJsonReceivedFromServer {
 
-    private static final String TAG = "Choost stylist model";
+    private static final String TAG = "Choose stylist model";
     private static ChooseStylistModel instance;
-    private LinearLayoutManager layoutManager;
-    private List<Stylist> stylistsFromServer = new ArrayList<>();
-    private StylistsListFromServerAdapter adapter = new StylistsListFromServerAdapter(stylistsFromServer);
+    private static LinearLayoutManager layoutManager;
+    private static List<Stylist> stylistsFromServer = new ArrayList<>();
+    private static StylistsListFromServerAdapter adapter = new StylistsListFromServerAdapter(stylistsFromServer);
     private Runnable downloadsTask;
 
     public static ChooseStylistModel getInstance(Context context) {
         if (instance == null) {
             instance = new ChooseStylistModel(context);
         }
+        layoutManager = (new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
+        adapter.notifyDataSetChanged();
         return instance;
     }
 
     private ChooseStylistModel(Context context) {
-        adapter.notifyDataSetChanged();
-        layoutManager = (new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
     }
 
     public RecyclerView.LayoutManager getLayoutManager() {
