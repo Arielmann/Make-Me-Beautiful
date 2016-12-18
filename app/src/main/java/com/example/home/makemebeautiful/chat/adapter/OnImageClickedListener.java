@@ -6,7 +6,7 @@ import android.view.View;
 
 import com.example.home.makemebeautiful.R;
 import com.example.home.makemebeautiful.handlers.FragmentBuilder;
-import com.example.home.makemebeautiful.image_providing.fragments.FullScreenImageViewFrag;
+import com.example.home.makemebeautiful.imageproviding.fragments.FullScreenImageViewFrag;
 
 import org.greenrobot.eventbus.EventBus;
 

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/teal_bg"
     android:orientation="vertical"
-    tools:context=".contactedusers.ContactedUsersScreen">
+    tools:context=".contactedusers.ContactedUsersActivity">
 
     <fragment
         android:id="@+id/toolbarFragInContactedUsers"

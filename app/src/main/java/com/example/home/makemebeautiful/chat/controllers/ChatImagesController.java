@@ -9,10 +9,10 @@ import com.example.home.makemebeautiful.chat.model.ChatDataModel;
 import com.example.home.makemebeautiful.chat.model.ChatItem;
 import com.example.home.makemebeautiful.contactedusers.model.ContactedUsersModel;
 import com.example.home.makemebeautiful.contactedusers.model.ContactedUsersRowsHashMap;
-import com.example.home.makemebeautiful.image_providing.ImageUtils;
+import com.example.home.makemebeautiful.imageproviding.ImageUtils;
 import com.example.home.makemebeautiful.servercommunication.OnImageUploadedToServer;
 import com.example.home.makemebeautiful.servercommunication.SendMessagePushNotification;
-import com.example.home.makemebeautiful.servercommunication.UploadData;
+import com.example.home.makemebeautiful.servercommunication.UploadImage;
 import com.example.home.makemebeautiful.profile.sharedprefrences.SharedPrefManager;
 import com.example.home.makemebeautiful.profile.profilemodels.Stylist;
 
@@ -82,7 +82,7 @@ public class ChatImagesController extends IChatController implements OnImageUplo
     public void uploadChatImageToServer(Activity activity, Uri imageUri) {
         Log.d(TAG, "start uploading image method");
         String imagePath = ImageUtils.getRealPathFromURI(activity, imageUri);
-        UploadData imageUploader = new UploadData(activity, this, imagePath, imageUri);
+        UploadImage imageUploader = new UploadImage(activity, this, imagePath, imageUri);
         imageUploader.execute();
         Log.d(TAG, "image uploader executed");
     }

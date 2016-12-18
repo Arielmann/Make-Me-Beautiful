@@ -15,9 +15,9 @@ import android.view.ViewGroup;
 import com.example.home.makemebeautiful.R;
 import com.example.home.makemebeautiful.chat.model.ChatItem;
 import com.example.home.makemebeautiful.choosestylist.choosing_screen.ChooseStylistScreen;
-import com.example.home.makemebeautiful.contactedusers.ContactedUsersScreen;
-import com.example.home.makemebeautiful.image_providing.ImageLoader;
-import com.example.home.makemebeautiful.image_providing.OnImageLoadingError;
+import com.example.home.makemebeautiful.contactedusers.ContactedUsersActivity;
+import com.example.home.makemebeautiful.imageproviding.ImageLoader;
+import com.example.home.makemebeautiful.imageproviding.OnImageLoadingError;
 import com.example.home.makemebeautiful.profile.sharedprefrences.SharedPrefManager;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
@@ -51,7 +51,7 @@ public class ToolbarFrag extends Fragment implements ImageLoader, OnImageLoading
 
     public void createDrawer() {
         goToChooseStylistScreen = new GoToScreenFromDrawerItem(getActivity(), ChooseStylistScreen.class);
-        goToContactedUsersScreen = new GoToScreenFromDrawerItem(getActivity(), ContactedUsersScreen.class);
+        goToContactedUsersScreen = new GoToScreenFromDrawerItem(getActivity(), ContactedUsersActivity.class);
         toolbar = (Toolbar) toolbarLayout.findViewById(R.id.customToolbar);
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
         ((AppCompatActivity) getActivity()).getSupportActionBar().setSubtitle(null);

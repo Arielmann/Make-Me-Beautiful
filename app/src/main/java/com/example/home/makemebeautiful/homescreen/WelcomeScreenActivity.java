@@ -8,7 +8,7 @@ import android.widget.Button;
 import com.example.home.makemebeautiful.R;
 import com.example.home.makemebeautiful.appinit.AppDataInit;
 import com.example.home.makemebeautiful.choosestylist.choosing_screen.ChooseStylistScreen;
-import com.example.home.makemebeautiful.gotoscreen.GoToScreen;
+import com.example.home.makemebeautiful.handlers.GoToScreen;
 import com.example.home.makemebeautiful.toolbar.ToolbarFrag;
 import com.example.home.makemebeautiful.profile.sharedprefrences.SharedPrefManager;
 import com.example.home.makemebeautiful.profile.registration.basic.RegisterBasicProfileScreen;
@@ -16,7 +16,7 @@ import com.example.home.makemebeautiful.profile.registration.basic.RegisterBasic
 import java.util.concurrent.ExecutionException;
 
 
-public class WelcomeScreen extends AppCompatActivity {
+public class WelcomeScreenActivity extends AppCompatActivity {
 
     ToolbarFrag toolbarFrag;
     String WELCOME_SCREEN_TAG = "Welcome screen";

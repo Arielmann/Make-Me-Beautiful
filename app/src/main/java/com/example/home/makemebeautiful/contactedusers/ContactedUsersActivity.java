@@ -8,7 +8,7 @@ import com.example.home.makemebeautiful.contactedusers.fragments.ContactedUsersP
 import com.example.home.makemebeautiful.handlers.FragmentBuilder;
 import com.example.home.makemebeautiful.toolbar.ToolbarFrag;
 
-public class ContactedUsersScreen extends AppCompatActivity {
+public class ContactedUsersActivity extends AppCompatActivity {
 
     /*
     * will manage the whole process of

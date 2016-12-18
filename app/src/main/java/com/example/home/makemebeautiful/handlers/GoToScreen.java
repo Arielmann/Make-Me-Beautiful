@@ -1,4 +1,4 @@
-package com.example.home.makemebeautiful.gotoscreen;
+package com.example.home.makemebeautiful.handlers;
 
 import android.app.Activity;
 import android.app.ProgressDialog;

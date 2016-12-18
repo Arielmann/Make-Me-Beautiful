@@ -18,10 +18,10 @@ import com.example.home.makemebeautiful.chat.controllers.ChatTextMessagesControl
 import com.example.home.makemebeautiful.chat.fragments.ChatFrag;
 import com.example.home.makemebeautiful.chat.model.ChatDataModel;
 import com.example.home.makemebeautiful.chat.model.ChatItem;
-import com.example.home.makemebeautiful.image_providing.ChooseImageProvider;
-import com.example.home.makemebeautiful.image_providing.ImageLoader;
-import com.example.home.makemebeautiful.image_providing.ImageUtils;
-import com.example.home.makemebeautiful.image_providing.fragments.FullScreenImageViewFrag;
+import com.example.home.makemebeautiful.imageproviding.ChooseImageProvider;
+import com.example.home.makemebeautiful.imageproviding.ImageLoader;
+import com.example.home.makemebeautiful.imageproviding.ImageUtils;
+import com.example.home.makemebeautiful.imageproviding.fragments.FullScreenImageViewFrag;
 import com.example.home.makemebeautiful.profile.sharedprefrences.SharedPrefManager;
 import com.example.home.makemebeautiful.profile.profilemodels.Stylist;
 
@@ -49,7 +49,7 @@ import java.util.concurrent.ExecutionException;
     */
 
 
-public class ChatScreen extends AppCompatActivity implements OnTextTransferred, ImageLoader, ChooseImageProvider {
+public class ChatActivity extends AppCompatActivity implements OnTextTransferred, ImageLoader, ChooseImageProvider {
     private static final String TAG = "Chat Screen";
     private ChatFrag chatPresenter;
     private ChatTextMessagesController chatTextMessagesController;
@@ -60,7 +60,7 @@ public class ChatScreen extends AppCompatActivity implements OnTextTransferred, 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chat_screen);
+        setContentView(R.layout.activity_chat);
         initActivity();
     }
 

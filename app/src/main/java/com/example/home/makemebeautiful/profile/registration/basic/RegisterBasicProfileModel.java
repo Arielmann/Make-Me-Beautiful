@@ -6,12 +6,12 @@ import android.graphics.Point;
 import android.support.v4.app.Fragment;
 import android.view.Display;
 
-import com.example.home.makemebeautiful.gotoscreen.GoToScreen;
+import com.example.home.makemebeautiful.handlers.GoToScreen;
 import com.example.home.makemebeautiful.servercommunication.RegisterToGcm;
 import com.example.home.makemebeautiful.profile.sharedprefrences.SharedPrefManager;
 import com.example.home.makemebeautiful.profile.registration.GenericSettingsModel;
 import com.example.home.makemebeautiful.profile.registration.description.SetDescriptionScreen;
-import com.example.home.makemebeautiful.homescreen.WelcomeScreen;
+import com.example.home.makemebeautiful.homescreen.WelcomeScreenActivity;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -103,7 +103,7 @@ public class RegisterBasicProfileModel extends GenericSettingsModel {
     private void checkIfAlreadySignedUp() {
         String userName = SharedPrefManager.getInstance(getContext()).getUserName();
         if (!userName.equals("user name error")) {
-            GoToScreen goToWelcomeScreen = new GoToScreen((Activity) getContext(), WelcomeScreen.class);
+            GoToScreen goToWelcomeScreen = new GoToScreen((Activity) getContext(), WelcomeScreenActivity.class);
             goToWelcomeScreen.onClick(null);
         }
     }

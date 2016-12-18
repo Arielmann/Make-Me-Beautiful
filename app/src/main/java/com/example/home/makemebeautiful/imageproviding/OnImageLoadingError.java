@@ -1,4 +1,4 @@
-package com.example.home.makemebeautiful.image_providing;
+package com.example.home.makemebeautiful.imageproviding;
 
 /**
  * Created by home on 9/6/2016.

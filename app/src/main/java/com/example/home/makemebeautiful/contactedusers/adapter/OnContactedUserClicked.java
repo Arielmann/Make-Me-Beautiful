@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.view.View;
 
 import com.example.home.makemebeautiful.dbmanager.DataBaseManager;
-import com.example.home.makemebeautiful.chat.ChatScreen;
+import com.example.home.makemebeautiful.chat.ChatActivity;
 import com.example.home.makemebeautiful.profile.profilemodels.Stylist;
 
 import org.greenrobot.eventbus.EventBus;
@@ -37,7 +37,7 @@ public class OnContactedUserClicked implements View.OnClickListener{
         Stylist addressedStylist = DataBaseManager.getInstance(context)
                 .getContactedStylistsReader().getStylist(addressedUserName[0]);
 
-        Intent chatScreenIntent = new Intent(context, ChatScreen.class);
+        Intent chatScreenIntent = new Intent(context, ChatActivity.class);
         chatScreenIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         EventBus.getDefault().postSticky(addressedStylist);
         context.startActivity(chatScreenIntent);

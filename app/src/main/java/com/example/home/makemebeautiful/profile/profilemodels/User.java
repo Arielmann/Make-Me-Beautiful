@@ -2,7 +2,7 @@ package com.example.home.makemebeautiful.profile.profilemodels;
 
 import android.graphics.Bitmap;
 
-import com.example.home.makemebeautiful.image_providing.ImageUtils;
+import com.example.home.makemebeautiful.imageproviding.ImageUtils;
 
 import java.io.Serializable;
 

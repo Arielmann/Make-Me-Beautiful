@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.View;
 
-import com.example.home.makemebeautiful.chat.ChatScreen;
+import com.example.home.makemebeautiful.chat.ChatActivity;
 import com.example.home.makemebeautiful.profile.profilemodels.Stylist;
 
 import org.greenrobot.eventbus.EventBus;
@@ -37,7 +37,7 @@ public class OnStylistClickedForSendImages implements View.OnClickListener {
 
     public OnStylistClickedForSendImages(Activity activity,  Stylist addressedStylist) {
         this.chatScreenActivity = activity;
-        this.goToChatScreen = new Intent(activity, ChatScreen.class);
+        this.goToChatScreen = new Intent(activity, ChatActivity.class);
         goToChatScreen.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         EventBus.getDefault().postSticky(addressedStylist);
     }

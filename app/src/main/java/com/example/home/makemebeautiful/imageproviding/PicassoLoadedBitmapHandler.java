@@ -1,4 +1,4 @@
-package com.example.home.makemebeautiful.image_providing;
+package com.example.home.makemebeautiful.imageproviding;
 
 import android.content.Context;
 import android.graphics.Bitmap;

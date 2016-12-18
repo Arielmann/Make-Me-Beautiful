@@ -7,7 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
 import com.example.home.makemebeautiful.choosestylist.choosing_screen.adapter.StylistsListFromServerAdapter;
-import com.example.home.makemebeautiful.image_providing.ImageUtils;
+import com.example.home.makemebeautiful.imageproviding.ImageUtils;
 import com.example.home.makemebeautiful.profile.profilemodels.Stylist;
 
 import java.util.ArrayList;

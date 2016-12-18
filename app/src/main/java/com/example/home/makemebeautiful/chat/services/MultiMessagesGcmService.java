@@ -16,14 +16,14 @@ import android.util.Log;
 
 import com.example.home.makemebeautiful.R;
 import com.example.home.makemebeautiful.appinit.AppDataInit;
-import com.example.home.makemebeautiful.chat.ChatScreen;
+import com.example.home.makemebeautiful.chat.ChatActivity;
 import com.example.home.makemebeautiful.chat.controllers.ChatImagesController;
 import com.example.home.makemebeautiful.chat.controllers.ChatTextMessagesController;
 import com.example.home.makemebeautiful.chat.model.ChatDataModel;
 import com.example.home.makemebeautiful.chat.model.ChatItem;
 import com.example.home.makemebeautiful.chat.model.MessageItemsFromServer;
-import com.example.home.makemebeautiful.image_providing.ImageLoader;
-import com.example.home.makemebeautiful.image_providing.ImageUtils;
+import com.example.home.makemebeautiful.imageproviding.ImageLoader;
+import com.example.home.makemebeautiful.imageproviding.ImageUtils;
 import com.example.home.makemebeautiful.profile.sharedprefrences.SharedPrefManager;
 import com.example.home.makemebeautiful.profile.profilemodels.Stylist;
 import com.google.android.gms.gcm.GcmReceiver;
@@ -156,7 +156,7 @@ public class MultiMessagesGcmService extends IntentService implements ImageLoade
     }
 
     private Intent initDestinationScreenIntent() {
-        Intent goToChatScreen = new Intent(this, ChatScreen.class);
+        Intent goToChatScreen = new Intent(this, ChatActivity.class);
         Log.d(TAG, "Addressed user built: " + addressedUser.toString());
         goToChatScreen.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         return goToChatScreen;

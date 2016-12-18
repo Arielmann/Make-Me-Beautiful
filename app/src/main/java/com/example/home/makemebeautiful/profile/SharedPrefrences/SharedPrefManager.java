@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 
-import com.example.home.makemebeautiful.image_providing.ImageUtils;
+import com.example.home.makemebeautiful.imageproviding.ImageUtils;
 
 import java.util.HashMap;
 

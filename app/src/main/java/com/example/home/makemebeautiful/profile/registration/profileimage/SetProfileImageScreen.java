@@ -9,9 +9,9 @@ import android.support.v7.app.AppCompatActivity;
 import com.example.home.makemebeautiful.handlers.FragmentBuilder;
 import com.example.home.makemebeautiful.R;
 import com.example.home.makemebeautiful.chat.model.ChatItem;
-import com.example.home.makemebeautiful.image_providing.ChooseImageProvider;
-import com.example.home.makemebeautiful.image_providing.ImageLoader;
-import com.example.home.makemebeautiful.image_providing.ImageUtils;
+import com.example.home.makemebeautiful.imageproviding.ChooseImageProvider;
+import com.example.home.makemebeautiful.imageproviding.ImageLoader;
+import com.example.home.makemebeautiful.imageproviding.ImageUtils;
 
 
 public class SetProfileImageScreen extends AppCompatActivity implements ChooseImageProvider, ImageLoader {

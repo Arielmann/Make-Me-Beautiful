@@ -5,7 +5,7 @@ import android.os.AsyncTask;
 
 import com.example.home.makemebeautiful.contactedusers.model.ContactedUsersModel;
 import com.example.home.makemebeautiful.dbmanager.DataBaseManager;
-import com.example.home.makemebeautiful.image_providing.ImageUtils;
+import com.example.home.makemebeautiful.imageproviding.ImageUtils;
 
 /**
  * Created by home on 7/30/2016.

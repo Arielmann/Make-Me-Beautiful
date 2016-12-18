@@ -1,4 +1,4 @@
-package com.example.home.makemebeautiful.image_providing;
+package com.example.home.makemebeautiful.imageproviding;
 
 import android.app.Activity;
 import android.content.Context;

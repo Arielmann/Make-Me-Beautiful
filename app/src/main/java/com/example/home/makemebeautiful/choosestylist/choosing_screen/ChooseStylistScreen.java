@@ -11,7 +11,7 @@ public class ChooseStylistScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choose_stylist_screen);
+        setContentView(R.layout.activity_choose_stylist);
         ToolbarFrag toolbar = (ToolbarFrag) getSupportFragmentManager().findFragmentById(R.id.toolbarFragInChooseStylistScreen);
         toolbar.createDrawer();
         ChooseStylistViewFrag chooseStylistFrag = (ChooseStylistViewFrag) getSupportFragmentManager().findFragmentById(R.id.chooseStylistFrag);

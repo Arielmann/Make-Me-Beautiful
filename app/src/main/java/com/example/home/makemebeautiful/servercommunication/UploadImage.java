@@ -18,7 +18,7 @@ import java.net.URL;
 /**
  * Created by home on 5/18/2016.
  */
-public class UploadData extends AsyncTask<Void, String, String> {
+public class UploadImage extends AsyncTask<Void, String, String> {
 
     private String regId;
     private String TAG = "Upload data";
@@ -28,7 +28,7 @@ public class UploadData extends AsyncTask<Void, String, String> {
     private Object interfaceHolder;
     private Uri imageUri;
 
-    public UploadData(Context context, Object interfaceHolder, String uploadFilePath, Uri imageUri) {
+    public UploadImage(Context context, Object interfaceHolder, String uploadFilePath, Uri imageUri) {
         this.regId = SharedPrefManager.getInstance(context).getUserGcmToken(); //SharedPrefManager inputStream a LOCAL class
         this.sourceFile = new File(uploadFilePath);
         this.interfaceHolder = interfaceHolder;

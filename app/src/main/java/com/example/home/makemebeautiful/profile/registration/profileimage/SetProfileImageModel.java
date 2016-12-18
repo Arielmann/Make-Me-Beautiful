@@ -7,15 +7,15 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.home.makemebeautiful.R;
-import com.example.home.makemebeautiful.gotoscreen.GoToScreen;
-import com.example.home.makemebeautiful.image_providing.ImageUtils;
-import com.example.home.makemebeautiful.image_providing.fragments.Dialogs.ChooseImageSourceDialog;
+import com.example.home.makemebeautiful.handlers.GoToScreen;
+import com.example.home.makemebeautiful.imageproviding.ImageUtils;
+import com.example.home.makemebeautiful.imageproviding.fragments.Dialogs.ChooseImageSourceDialog;
 import com.example.home.makemebeautiful.servercommunication.OnImageUploadedToServer;
 import com.example.home.makemebeautiful.servercommunication.OnPushNotificationSent;
 import com.example.home.makemebeautiful.servercommunication.SaveUserToServerPushNotification;
-import com.example.home.makemebeautiful.servercommunication.UploadData;
+import com.example.home.makemebeautiful.servercommunication.UploadImage;
 import com.example.home.makemebeautiful.profile.sharedprefrences.SharedPrefManager;
-import com.example.home.makemebeautiful.homescreen.WelcomeScreen;
+import com.example.home.makemebeautiful.homescreen.WelcomeScreenActivity;
 
 import java.util.concurrent.ExecutionException;
 
@@ -84,7 +84,7 @@ public class SetProfileImageModel implements View.OnClickListener, OnImageUpload
     }
 
     private void uploadProfileImage() throws ExecutionException, InterruptedException {
-        UploadData profileImageUploader = new UploadData(activity, this, profileImagePathForUploading, profileImageUriForUploading);
+        UploadImage profileImageUploader = new UploadImage(activity, this, profileImagePathForUploading, profileImageUriForUploading);
         profileImageUploader.execute();
     }
 
@@ -104,7 +104,7 @@ public class SetProfileImageModel implements View.OnClickListener, OnImageUpload
     @Override
     public void onPushSuccess() {
         progressDialog.dismiss();
-        final GoToScreen goToWelcomeScreen = new GoToScreen(activity, WelcomeScreen.class);
+        final GoToScreen goToWelcomeScreen = new GoToScreen(activity, WelcomeScreenActivity.class);
         goToWelcomeScreen.onClick(null);
     }
 

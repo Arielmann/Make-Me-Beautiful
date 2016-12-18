@@ -3,8 +3,8 @@ package com.example.home.makemebeautiful.chat.controllers;
 import android.content.Context;
 import android.view.View;
 
-import com.example.home.makemebeautiful.image_providing.ImageUtils;
-import com.example.home.makemebeautiful.image_providing.fragments.Dialogs.ChooseImageSourceDialog;
+import com.example.home.makemebeautiful.imageproviding.ImageUtils;
+import com.example.home.makemebeautiful.imageproviding.fragments.Dialogs.ChooseImageSourceDialog;
 
 /**
  * Created by home on 8/21/2016.

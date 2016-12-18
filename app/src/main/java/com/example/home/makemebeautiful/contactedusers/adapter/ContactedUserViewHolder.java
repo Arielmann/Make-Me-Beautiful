@@ -13,9 +13,9 @@ import com.example.home.makemebeautiful.R;
 import com.example.home.makemebeautiful.chat.adapter.GenericViewHolder;
 import com.example.home.makemebeautiful.chat.model.ChatItem;
 import com.example.home.makemebeautiful.contactedusers.model.ContactedUserRow;
-import com.example.home.makemebeautiful.image_providing.ImageUtils;
-import com.example.home.makemebeautiful.image_providing.ImageLoader;
-import com.example.home.makemebeautiful.image_providing.OnImageLoadingError;
+import com.example.home.makemebeautiful.imageproviding.ImageUtils;
+import com.example.home.makemebeautiful.imageproviding.ImageLoader;
+import com.example.home.makemebeautiful.imageproviding.OnImageLoadingError;
 import com.sromku.simple.storage.SimpleStorage;
 import com.sromku.simple.storage.Storage;
 

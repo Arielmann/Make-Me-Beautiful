@@ -8,9 +8,9 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import com.example.home.makemebeautiful.chat.model.ChatItem;
-import com.example.home.makemebeautiful.image_providing.ImageLoader;
-import com.example.home.makemebeautiful.image_providing.ImageUtils;
-import com.example.home.makemebeautiful.image_providing.OnImageLoadingError;
+import com.example.home.makemebeautiful.imageproviding.ImageLoader;
+import com.example.home.makemebeautiful.imageproviding.ImageUtils;
+import com.example.home.makemebeautiful.imageproviding.OnImageLoadingError;
 
 import java.io.File;
 import java.util.List;
