@@ -11,8 +11,8 @@ import android.widget.TextView;
 import com.example.home.makemebeautiful.R;
 import com.example.home.makemebeautiful.chat.adapter.GenericViewHolder;
 import com.example.home.makemebeautiful.chat.model.ChatItem;
-import com.example.home.makemebeautiful.imageproviding.ImageUtils;
-import com.example.home.makemebeautiful.imageproviding.ImageLoader;
+import com.example.home.makemebeautiful.utils.imageutils.ImageUtils;
+import com.example.home.makemebeautiful.utils.imageutils.ImageLoader;
 import com.example.home.makemebeautiful.profile.profilemodels.Stylist;
 
 import java.util.List;

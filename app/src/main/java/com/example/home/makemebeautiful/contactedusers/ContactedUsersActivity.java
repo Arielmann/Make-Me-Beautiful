@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.example.home.makemebeautiful.R;
 import com.example.home.makemebeautiful.contactedusers.fragments.ContactedUsersPresenterFrag;
-import com.example.home.makemebeautiful.handlers.FragmentBuilder;
+import com.example.home.makemebeautiful.utils.handlers.FragmentBuilder;
 import com.example.home.makemebeautiful.toolbar.ToolbarFrag;
 
 public class ContactedUsersActivity extends AppCompatActivity {

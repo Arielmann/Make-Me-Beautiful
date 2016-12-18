@@ -10,7 +10,7 @@ import com.example.home.makemebeautiful.chat.model.AllConversationsHashMap;
 import com.example.home.makemebeautiful.choosestylist.model.ChooseStylistModel;
 import com.example.home.makemebeautiful.contactedusers.model.ContactedUsersModel;
 import com.example.home.makemebeautiful.contactedusers.model.ContactedUsersRowsHashMap;
-import com.example.home.makemebeautiful.imageproviding.ImageUtils;
+import com.example.home.makemebeautiful.utils.imageutils.ImageUtils;
 import com.example.home.makemebeautiful.servercommunication.ReadStylistsFromServer;
 import com.sromku.simple.storage.SimpleStorage;
 import com.sromku.simple.storage.Storage;

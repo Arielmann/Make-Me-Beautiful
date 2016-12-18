@@ -6,11 +6,11 @@ import android.graphics.Point;
 import android.support.v4.app.Fragment;
 import android.view.Display;
 
-import com.example.home.makemebeautiful.handlers.GoToScreen;
+import com.example.home.makemebeautiful.utils.handlers.GoToScreen;
 import com.example.home.makemebeautiful.servercommunication.RegisterToGcm;
 import com.example.home.makemebeautiful.profile.sharedprefrences.SharedPrefManager;
 import com.example.home.makemebeautiful.profile.registration.GenericSettingsModel;
-import com.example.home.makemebeautiful.profile.registration.description.SetDescriptionScreen;
+import com.example.home.makemebeautiful.profile.registration.description.SetDescriptionActivity;
 import com.example.home.makemebeautiful.homescreen.WelcomeScreenActivity;
 
 import java.util.HashMap;
@@ -84,12 +84,12 @@ public class RegisterBasicProfileModel extends GenericSettingsModel {
     }
 
     private void goToNextScreenWithProgressDialog() {
-        GoToScreen goToSetDescriptionScreen = new GoToScreen((Activity) getContext(), SetDescriptionScreen.class, "Creating Account...");
+        GoToScreen goToSetDescriptionScreen = new GoToScreen((Activity) getContext(), SetDescriptionActivity.class, "Creating Account...");
         goToSetDescriptionScreen.goToScreenWithProgressDialog.onClick(null);
     }
 
     public void goToNextScreen() {
-        Intent goToDescriptionScreen = new Intent(getContext(), SetDescriptionScreen.class);
+        Intent goToDescriptionScreen = new Intent(getContext(), SetDescriptionActivity.class);
         getContext().startActivity(goToDescriptionScreen);
     }
 

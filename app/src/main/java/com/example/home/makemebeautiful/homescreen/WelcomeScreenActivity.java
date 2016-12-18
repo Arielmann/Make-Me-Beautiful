@@ -7,11 +7,11 @@ import android.widget.Button;
 
 import com.example.home.makemebeautiful.R;
 import com.example.home.makemebeautiful.appinit.AppDataInit;
-import com.example.home.makemebeautiful.choosestylist.choosing_screen.ChooseStylistScreen;
-import com.example.home.makemebeautiful.handlers.GoToScreen;
+import com.example.home.makemebeautiful.choosestylist.choosing_screen.ChooseStylistActivity;
+import com.example.home.makemebeautiful.utils.handlers.GoToScreen;
 import com.example.home.makemebeautiful.toolbar.ToolbarFrag;
 import com.example.home.makemebeautiful.profile.sharedprefrences.SharedPrefManager;
-import com.example.home.makemebeautiful.profile.registration.basic.RegisterBasicProfileScreen;
+import com.example.home.makemebeautiful.profile.registration.basic.RegisterBasicProfileActivity;
 
 import java.util.concurrent.ExecutionException;
 
@@ -35,7 +35,7 @@ public class WelcomeScreenActivity extends AppCompatActivity {
             try {
                 initAppDataFromWelcomeScreen();
                 Button goToChooseStylistButton = (Button) findViewById(R.id.goToChooseStylistScreen);
-                GoToScreen goToChooseStylistAction = new GoToScreen(this, ChooseStylistScreen.class);
+                GoToScreen goToChooseStylistAction = new GoToScreen(this, ChooseStylistActivity.class);
                 goToChooseStylistButton.setOnClickListener(goToChooseStylistAction);
             } catch (ExecutionException e) {
                 e.printStackTrace();
@@ -46,7 +46,7 @@ public class WelcomeScreenActivity extends AppCompatActivity {
     }
 
     private void goToRegistrationScreen() {
-        GoToScreen goToRegistrationBasicProfileScreen = new GoToScreen(this, RegisterBasicProfileScreen.class);
+        GoToScreen goToRegistrationBasicProfileScreen = new GoToScreen(this, RegisterBasicProfileActivity.class);
         goToRegistrationBasicProfileScreen.onClick(null);
     }
 

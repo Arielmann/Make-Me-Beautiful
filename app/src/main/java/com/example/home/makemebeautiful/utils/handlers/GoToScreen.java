@@ -1,4 +1,4 @@
-package com.example.home.makemebeautiful.handlers;
+package com.example.home.makemebeautiful.utils.handlers;
 
 import android.app.Activity;
 import android.app.ProgressDialog;

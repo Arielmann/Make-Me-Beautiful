@@ -1,4 +1,4 @@
-package com.example.home.makemebeautiful.imageproviding;
+package com.example.home.makemebeautiful.utils.imageutils;
 
 import android.support.v4.app.Fragment;
 

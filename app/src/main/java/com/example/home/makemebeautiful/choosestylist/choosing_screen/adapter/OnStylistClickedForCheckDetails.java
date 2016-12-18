@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 
-import com.example.home.makemebeautiful.choosestylist.stylist_details_screen.StylistDetailsScreen;
+import com.example.home.makemebeautiful.choosestylist.stylist_details_screen.StylistDetailsActivity;
 import com.example.home.makemebeautiful.profile.profilemodels.Stylist;
 
 import org.greenrobot.eventbus.EventBus;
@@ -27,7 +27,7 @@ public class OnStylistClickedForCheckDetails implements View.OnClickListener, Se
     @Override
     public void onClick(View v) {
         v.setClickable(false);
-        Intent stylistDetailsIntent = new Intent(context, StylistDetailsScreen.class);
+        Intent stylistDetailsIntent = new Intent(context, StylistDetailsActivity.class);
         stylistDetailsIntent.setFlags (Intent.FLAG_ACTIVITY_CLEAR_TOP);
         EventBus.getDefault().postSticky(addressedStylist);
         context.startActivity(stylistDetailsIntent); //TODO: disable click after first time, else it search database twice (רחמנא ליצלן)

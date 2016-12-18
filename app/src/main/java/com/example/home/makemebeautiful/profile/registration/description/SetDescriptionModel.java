@@ -5,7 +5,7 @@ import android.support.v4.app.Fragment;
 
 import com.example.home.makemebeautiful.profile.sharedprefrences.SharedPrefManager;
 import com.example.home.makemebeautiful.profile.registration.GenericSettingsModel;
-import com.example.home.makemebeautiful.profile.registration.profileimage.SetProfileImageScreen;
+import com.example.home.makemebeautiful.profile.registration.profileimage.SetProfileImageActivity;
 
 import java.util.HashMap;
 
@@ -44,7 +44,7 @@ public class SetDescriptionModel extends GenericSettingsModel {
 
 
     public void goToNextScreen() {
-        Intent goToProfileImageEditor = new Intent(getContext(), SetProfileImageScreen.class);
+        Intent goToProfileImageEditor = new Intent(getContext(), SetProfileImageActivity.class);
         getContext().startActivity(goToProfileImageEditor);
     }
 

@@ -7,9 +7,9 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.home.makemebeautiful.R;
-import com.example.home.makemebeautiful.handlers.GoToScreen;
-import com.example.home.makemebeautiful.imageproviding.ImageUtils;
-import com.example.home.makemebeautiful.imageproviding.fragments.Dialogs.ChooseImageSourceDialog;
+import com.example.home.makemebeautiful.utils.handlers.GoToScreen;
+import com.example.home.makemebeautiful.utils.imageutils.ImageUtils;
+import com.example.home.makemebeautiful.utils.imageutils.fragments.Dialogs.ChooseImageSourceDialog;
 import com.example.home.makemebeautiful.servercommunication.OnImageUploadedToServer;
 import com.example.home.makemebeautiful.servercommunication.OnPushNotificationSent;
 import com.example.home.makemebeautiful.servercommunication.SaveUserToServerPushNotification;

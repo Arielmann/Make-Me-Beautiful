@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.example.home.makemebeautiful.R;
 
-public class StylistDetailsScreen extends AppCompatActivity {
+public class StylistDetailsActivity extends AppCompatActivity {
         /*
         * This class is naturally started after
         * a stylist is chosen from the stylist's

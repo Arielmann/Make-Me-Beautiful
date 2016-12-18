@@ -29,11 +29,11 @@
 
         </activity>
         <activity
-            android:name=".choosestylist.choosing_screen.ChooseStylistScreen"
+            android:name=".choosestylist.choosing_screen.ChooseStylistActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".choosestylist.stylist_details_screen.StylistDetailsScreen"
+            android:name=".choosestylist.stylist_details_screen.StylistDetailsActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
@@ -41,11 +41,11 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".profile.registration.description.SetDescriptionScreen"
+            android:name=".profile.registration.description.SetDescriptionActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".profile.registration.profileimage.SetProfileImageScreen"
+            android:name=".profile.registration.profileimage.SetProfileImageActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
@@ -53,7 +53,7 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".profile.registration.basic.RegisterBasicProfileScreen"
+            android:name=".profile.registration.basic.RegisterBasicProfileActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait">
         </activity>

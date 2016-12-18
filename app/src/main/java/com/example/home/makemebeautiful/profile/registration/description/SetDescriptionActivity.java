@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.example.home.makemebeautiful.R;
 
 
-public class SetDescriptionScreen extends AppCompatActivity {
+public class SetDescriptionActivity extends AppCompatActivity {
 
 
     @Override

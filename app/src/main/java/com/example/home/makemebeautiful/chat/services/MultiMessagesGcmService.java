@@ -22,8 +22,8 @@ import com.example.home.makemebeautiful.chat.controllers.ChatTextMessagesControl
 import com.example.home.makemebeautiful.chat.model.ChatDataModel;
 import com.example.home.makemebeautiful.chat.model.ChatItem;
 import com.example.home.makemebeautiful.chat.model.MessageItemsFromServer;
-import com.example.home.makemebeautiful.imageproviding.ImageLoader;
-import com.example.home.makemebeautiful.imageproviding.ImageUtils;
+import com.example.home.makemebeautiful.utils.imageutils.ImageLoader;
+import com.example.home.makemebeautiful.utils.imageutils.ImageUtils;
 import com.example.home.makemebeautiful.profile.sharedprefrences.SharedPrefManager;
 import com.example.home.makemebeautiful.profile.profilemodels.Stylist;
 import com.google.android.gms.gcm.GcmReceiver;

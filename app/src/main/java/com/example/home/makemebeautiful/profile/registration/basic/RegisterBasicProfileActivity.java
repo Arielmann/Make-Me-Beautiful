@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.example.home.makemebeautiful.appinit.AppDataInit;
 
-public class RegisterBasicProfileScreen extends AppCompatActivity {
+public class RegisterBasicProfileActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

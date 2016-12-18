@@ -5,8 +5,8 @@ import android.graphics.Bitmap;
 import android.view.View;
 
 import com.example.home.makemebeautiful.R;
-import com.example.home.makemebeautiful.handlers.FragmentBuilder;
-import com.example.home.makemebeautiful.imageproviding.fragments.FullScreenImageViewFrag;
+import com.example.home.makemebeautiful.utils.handlers.FragmentBuilder;
+import com.example.home.makemebeautiful.utils.imageutils.fragments.FullScreenImageViewFrag;
 
 import org.greenrobot.eventbus.EventBus;
 

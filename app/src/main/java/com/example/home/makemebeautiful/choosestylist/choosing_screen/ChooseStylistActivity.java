@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.example.home.makemebeautiful.R;
 import com.example.home.makemebeautiful.toolbar.ToolbarFrag;
 
-public class ChooseStylistScreen extends AppCompatActivity {
+public class ChooseStylistActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
