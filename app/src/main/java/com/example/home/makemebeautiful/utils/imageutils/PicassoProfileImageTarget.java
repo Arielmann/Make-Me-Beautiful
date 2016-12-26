@@ -46,5 +46,5 @@ public class PicassoProfileImageTarget extends PicassoLoadedBitmapHandler implem
     @Override
     public void onPrepareLoad(Drawable placeHolderDrawable) {
     }
-};
+}
 

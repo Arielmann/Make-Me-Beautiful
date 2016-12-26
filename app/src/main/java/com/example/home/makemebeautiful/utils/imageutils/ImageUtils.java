@@ -1,6 +1,8 @@
 package com.example.home.makemebeautiful.utils.imageutils;
 
 import android.app.Activity;
+import android.content.ContentResolver;
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -9,8 +11,10 @@ import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.DecodeFormat;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.example.home.makemebeautiful.R;
@@ -22,9 +26,14 @@ import com.example.home.makemebeautiful.profile.profilemodels.Stylist;
 import com.squareup.picasso.Picasso;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.util.List;
+import java.util.Locale;
+import java.util.Random;
+import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 
 /**
@@ -45,6 +54,10 @@ public class ImageUtils {
         return new int[]{targetImageHeight, targetImageWidth};
     }
 
+    public static int chooseImageSizesForSquare(Context context, int screenHeightDivider) {
+        return SharedPrefManager.getInstance(context).getUserDeviceScreenWidth() / screenHeightDivider;
+    }
+
     public static String getRealPathFromURI(Context context, Uri contentUri) {
         Cursor cursor = null;
         try {
@@ -52,7 +65,8 @@ public class ImageUtils {
             cursor = context.getContentResolver().query(contentUri, proj, null, null, null);
             int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
             cursor.moveToFirst();
-            return cursor.getString(column_index);
+            String pathFromUri = cursor.getString(column_index);
+            return pathFromUri;
         } finally {
             if (cursor != null) {
                 cursor.close();
@@ -61,8 +75,41 @@ public class ImageUtils {
     }
 
     public static Uri createImageUri(Context context, Bitmap bitmap) {
-        String path = MediaStore.Images.Media.insertImage(context.getContentResolver(), bitmap, "Make Me Beautiful " + bitmap.toString(), null);
-        return Uri.parse(path);
+        OutputStream fOut = null;
+        Random generator = new Random();
+        int n = 10000;
+        n = generator.nextInt(n);
+        String fileName = "Image-" + n + ".png";
+        final String appDirectoryName = "MMB";
+        final File imageRoot = new File(Environment.getExternalStoragePublicDirectory(
+                Environment.DIRECTORY_PICTURES), appDirectoryName);
+
+        imageRoot.mkdirs();
+        final File file = new File(imageRoot, fileName);
+        try {
+            fOut = new FileOutputStream(file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, fOut);
+        try {
+            fOut.flush();
+            fOut.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        String title = "MMB " + UUID.randomUUID().toString();
+        String description = "Make Me Beautiful Image";
+        ContentValues values = new ContentValues();
+        values.put(MediaStore.Images.Media.TITLE, title);
+        values.put(MediaStore.Images.Media.DESCRIPTION, description);
+        values.put(MediaStore.Images.Media.DATE_TAKEN, System.currentTimeMillis());
+        values.put(MediaStore.Images.ImageColumns.BUCKET_ID, file.toString().toLowerCase(Locale.US).hashCode());
+        values.put(MediaStore.Images.ImageColumns.BUCKET_DISPLAY_NAME, file.getName().toLowerCase(Locale.US));
+        values.put("_data", file.getAbsolutePath());
+        ContentResolver cr = context.getContentResolver();
+        return cr.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
     }
 
     public static void deleteImage(Context context, Uri imageUri) {
@@ -71,7 +118,7 @@ public class ImageUtils {
 
     //Called from Camera when choosing images
     public static void createBitmapFromImageSource(final String senderName, final Activity activity, final Uri imageUri, final int targetImageHeight, final int targetImageWidth) {
-        Glide.with(activity).load(imageUri).asBitmap().into(new SimpleTarget<Bitmap>(targetImageHeight, targetImageWidth) {
+        Glide.with(activity).load(imageUri).asBitmap().format(DecodeFormat.PREFER_ARGB_8888).into(new SimpleTarget<Bitmap>(targetImageHeight, targetImageWidth) {
             @Override
             public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
                 Bitmap scaledBm = Bitmap.createScaledBitmap(resource, targetImageWidth, targetImageHeight, true);
@@ -95,8 +142,8 @@ public class ImageUtils {
 
     //Called from ChatImageViewHolder and CustomProfileDrawerItem
     public static void createBitmapFromImageSource(final String position, final Context context, final Object interfacedHolder, final File imageFile, final int targetImageHeight, final int targetImageWidth) { //It's a static method because it doesn't use any class members!
-        GlideExceptionsListener listener = new GlideExceptionsListener(interfacedHolder);
-        Glide.with(context).load(imageFile).asBitmap().listener(listener).into(new SimpleTarget<Bitmap>(targetImageHeight, targetImageWidth) {
+        GlideExceptionsListener exceptionsListener = new GlideExceptionsListener(interfacedHolder);
+        Glide.with(context).load(imageFile).asBitmap().format(DecodeFormat.PREFER_ARGB_8888).listener(exceptionsListener).into(new SimpleTarget<Bitmap>(2000, 2000) {
             @Override
             public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
                 startImageLoaderInterface(interfacedHolder, position, resource, null);
@@ -131,7 +178,7 @@ public class ImageUtils {
 
     public static void initLoadedStylistsImageBitmaps(Context context, List<ContactedUserRow> stylists, int targetImageHeight, int targetImageWidth) {
         for (final ContactedUserRow contact : stylists) {
-            Glide.with(context).load(contact.getProfileImagePath()).asBitmap().into(new SimpleTarget<Bitmap>(targetImageHeight, targetImageWidth) {
+            Glide.with(context).load(contact.getProfileImagePath()).asBitmap().format(DecodeFormat.PREFER_ARGB_8888).into(new SimpleTarget<Bitmap>(2000, 2000) {
                 @Override
                 public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
                     contact.setBitmap(resource);
@@ -194,10 +241,13 @@ public class ImageUtils {
 
 
     public static void fetchUserProfileImage(Context context, Object interfaceHolder) {
-        int[] imageSizes = ImageUtils.chooseImageSizes(context, 2, 2);
-        int targetImageHeight = imageSizes[0];
-        int targetImageWidth = imageSizes[1];
+        int squareImageSize = ImageUtils.chooseImageSizesForSquare(context, 2);
         File profileImageFile = new File(SharedPrefManager.getInstance(context).getProfileImagePath());
-        ImageUtils.createBitmapFromImageSource("", context, interfaceHolder, profileImageFile, targetImageHeight, targetImageWidth); //create the image from the filepath and activate presentDownloadedImageOnScreen after this method
+        ImageUtils.createBitmapFromImageSource("", context, interfaceHolder, profileImageFile, squareImageSize, squareImageSize); //create the image from the filepath and activate presentDownloadedImageOnScreen after this method
+    }
+
+    public static Bitmap createSquaredScaledBitmap(Context context, Bitmap fullSizeBitmap, int sizeBasedOnScreenWidth) {
+        int squareImageSize = ImageUtils.chooseImageSizesForSquare(context, sizeBasedOnScreenWidth);
+        return Bitmap.createScaledBitmap(fullSizeBitmap, squareImageSize, squareImageSize, false);
     }
 }

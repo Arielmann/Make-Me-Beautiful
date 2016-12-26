@@ -34,8 +34,8 @@ public class TakePhotoFrag extends Fragment implements Serializable{
             String senderName = SharedPrefManager.getInstance(getContext()).getUserName();
             if (requestCode == CAM_REQUEST && resultCode == getActivity().RESULT_OK) {
                 Uri selectedImageUri = data.getData();
-                int[] imageSizes =   ImageUtils.chooseImageSizes(getActivity(), 2, 2);
-                ImageUtils.createBitmapFromImageSource(senderName, getActivity(), selectedImageUri, imageSizes[0], imageSizes[1]);
+                int squareImageSize = ImageUtils.chooseImageSizesForSquare(getActivity(), 2);
+                ImageUtils.createBitmapFromImageSource(senderName, getActivity(), selectedImageUri, squareImageSize, squareImageSize);
                 return;
                 //Adding Image to array method occurs on parent class
 

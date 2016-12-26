@@ -94,11 +94,11 @@ public class ChatActivity extends AppCompatActivity implements OnTextTransferred
 
     @Override
     public void onImageLoaded(String senderName, Bitmap scaledBitmap, ChatItem.ItemType itemType, Uri originalImageUri) throws ExecutionException, InterruptedException {
-        Uri finalImageUri = ImageUtils.createImageUri(this, scaledBitmap); //send uri of the final ROTATED image
+        Uri rotatedImageUri = ImageUtils.createImageUri(this, scaledBitmap); //send uri of the final ROTATED image
         chatImagesController.presentChatItemsOnScreen(senderName, scaledBitmap, originalImageUri, null, itemType);
         String thisUserName = SharedPrefManager.getInstance(this).getUserName();
         if (thisUserName.equals(senderName)) { //if image is sent from this user
-            chatImagesController.uploadChatImageToServer(this, finalImageUri);
+            chatImagesController.uploadChatImageToServer(this, rotatedImageUri);
         }
         chatPresenter.scrollChatToBottom(model);
     }

@@ -37,19 +37,21 @@ class ChatImageViewHolder extends GenericViewHolder implements ImageLoader, OnIm
 
     @Override
     public void setUIDataOnView(int position) {
+            String imagePath = dataSet.get(position).getImagePath();
         try {
             int finalViewTypeValue = dataSet.get(position).getFinalViewValue();
             this.chatImageButton = (ImageButton) view.findViewById(finalViewTypeValue);
-            Bitmap image = dataSet.get(position).getImage();
-            String imagePath = dataSet.get(position).getImagePath();
-            if (image != null) {
-                setFullImageScreenOnClickListener(image);
-                this.chatImageButton.setImageBitmap(image);
+            Bitmap fullSizeImage = dataSet.get(position).getImage();
+            Bitmap scaledImage = ImageUtils.createSquaredScaledBitmap(context, fullSizeImage, 2);
+            if (fullSizeImage != null && scaledImage != null) {
+                setFullImageScreenOnClickListener(fullSizeImage); //full screen on click fragment defined on full sized image to prevent data loss.
+                this.chatImageButton.setImageBitmap(scaledImage); // scaled image will be presented in chat screen.
                 Log.d(CHAT_IMAGE_VH_TAG, "image loaded. Path: " + imagePath);
             } else {
                 getBitmapFromFilePath(imagePath, "" + position);
             }
         } catch (Exception e) {
+            getBitmapFromFilePath(imagePath, "" + position);
             new Error(CHAT_IMAGE_VH_TAG + e.getMessage());
         }
     }
@@ -58,18 +60,18 @@ class ChatImageViewHolder extends GenericViewHolder implements ImageLoader, OnIm
         if (imagePath != null) {
             File chatImageFile = new File(imagePath);
             chatImageFile.mkdir();
-            int[] imageSizes = ImageUtils.chooseImageSizes(context, 4, 4);
-            int targetImageHeight = imageSizes[0];
-            int targetImageWidth = imageSizes[1];
-            ImageUtils.createBitmapFromImageSource(position, context, this, chatImageFile, targetImageHeight, targetImageWidth);
+            int[] imageSizes = ImageUtils.chooseImageSizes(context, 1, 1); //choose full scale sizes
+            ImageUtils.createBitmapFromImageSource(position, context, this, chatImageFile, imageSizes[0], imageSizes[1]);
         }
     }
 
     @Override
-    public void onImageLoaded(String senderName, Bitmap scaledBitmap, ChatItem.ItemType itemType, Uri imageResource) throws ExecutionException, InterruptedException {
-        this.chatImageButton.setImageBitmap(scaledBitmap);
-        dataSet.get(Integer.parseInt(senderName)).setImage(scaledBitmap);
-        setFullImageScreenOnClickListener(scaledBitmap);
+    public void onImageLoaded(String senderName, Bitmap fullSizeImage, ChatItem.ItemType itemType, Uri imageResource) throws ExecutionException, InterruptedException {
+        Bitmap scaledImage = ImageUtils.createSquaredScaledBitmap(context, fullSizeImage, 2);
+        this.chatImageButton.setImageBitmap(scaledImage); // scaled image will be presented in chat screen.
+        //TODO: fix next line, it is not effective. chat item's image should be set with scaled image and skip recscaling when reloaded
+        dataSet.get(Integer.parseInt(senderName)).setImage(fullSizeImage); //data set saves full scale image for future usage
+        setFullImageScreenOnClickListener(fullSizeImage);  //same for full screen image fragment
     }
 
     @Override
@@ -79,8 +81,7 @@ class ChatImageViewHolder extends GenericViewHolder implements ImageLoader, OnIm
     }
 
     private void setFullImageScreenOnClickListener(Bitmap image) {
-        int[] imageSizes = ImageUtils.chooseImageSizes(context, 2, 1);
-        Bitmap fullScreenImage = Bitmap.createScaledBitmap(image, imageSizes[0], imageSizes[1], false);
+        Bitmap fullScreenImage = ImageUtils.createSquaredScaledBitmap(context, image, 1);
         OnImageClickedListener onImageClicked = new OnImageClickedListener(context, fullScreenImage);
         chatImageButton.setOnClickListener(onImageClicked);
     }

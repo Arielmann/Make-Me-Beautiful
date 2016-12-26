@@ -35,7 +35,7 @@ public class OnStylistClickedForSendImages implements View.OnClickListener {
     private Activity chatScreenActivity;
     private Intent goToChatScreen;
 
-    public OnStylistClickedForSendImages(Activity activity,  Stylist addressedStylist) {
+    public OnStylistClickedForSendImages(Activity activity, Stylist addressedStylist) {
         this.chatScreenActivity = activity;
         this.goToChatScreen = new Intent(activity, ChatActivity.class);
         goToChatScreen.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

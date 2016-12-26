@@ -19,9 +19,6 @@ import org.greenrobot.eventbus.Subscribe;
 
 import java.util.List;
 
-/**
- * Created by home on 6/19/2016.
- */
 public class ContactedUsersPresenterFrag extends Fragment{
     private RecyclerView recyclerView;
     private TextView noContactedUsersMessage;
@@ -65,7 +62,7 @@ public class ContactedUsersPresenterFrag extends Fragment{
         return recyclerViewLayout;
     }
 
-    @Subscribe
+    @Subscribe //Intelij bug: Method is in usage, responding to event
     public void onContactedUsersLoadedEvent(OnContactedUsersLoadedEvent event) {
         initNoMessagesTextViewState(event.contactedUsersRows);
     }

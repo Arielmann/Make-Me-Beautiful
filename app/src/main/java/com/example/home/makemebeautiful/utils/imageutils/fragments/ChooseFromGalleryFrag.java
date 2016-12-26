@@ -35,8 +35,8 @@ public class ChooseFromGalleryFrag extends Fragment implements Serializable{
             if (requestCode == RESULT_LOAD_IMAGE && resultCode == getActivity().RESULT_OK && null != data) {
                 String senderName = SharedPrefManager.getInstance(getContext()).getUserName();
                 Uri selectedImageUri = data.getData();
-                int[] imageSizes = ImageUtils.chooseImageSizes(getActivity(), 2, 2);
-                ImageUtils.createBitmapFromImageSource(senderName, getActivity(), selectedImageUri, imageSizes[0], imageSizes[1]);
+                int squareImageSize = ImageUtils.chooseImageSizesForSquare(getActivity(), 1);
+                ImageUtils.createBitmapFromImageSource(senderName, getActivity(), selectedImageUri, squareImageSize, squareImageSize);
             } else {
                 Toast.makeText(getActivity(), "You haven't picked an Image", Toast.LENGTH_LONG).show();
             }

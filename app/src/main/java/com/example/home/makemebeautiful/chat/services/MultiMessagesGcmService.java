@@ -45,10 +45,19 @@ public class MultiMessagesGcmService extends IntentService implements ImageLoade
 
     private static final String MESSAGES_KEY = "messages";
     private static final String TAG = "multiple msg service";
+    public static final String SENDER_NAME = "sender_name";
+    public static final String COMPANY = "company";
+    public static final String LOCATION = "location";
+    public static final String PROFILE_IMAGE_URL = "profile_image_url";
+    public static final String NO_IMAGE_URL = "no image url (string defined in chat service)";
+    public static final String DESCRIPTION = "description";
+    public static final String NO_WEBSITE = "I still don't have one, maybe it's a good time";
+    public static final String WEBSITE = "website";
+    public static final String SENDER_REG_ID = "sender_reg_id";
     private Stylist addressedUser;
     private String senderName;
-    private String textMessage; //TODO: make arraylist for multiple notifications
-    private String imageUrlMessage; //TODO: make arraylist for multiple notifications
+    private String textMessage;
+    private String imageUrlMessage;
     private ChatDataModel model;
     private ChatImagesController imagesController;
     private ChatTextMessagesController textMessagesController;
@@ -94,19 +103,19 @@ public class MultiMessagesGcmService extends IntentService implements ImageLoade
     }
 
     private void initStylistFromServerBundle(Intent dataIntent) {
-        String senderName = dataIntent.getStringExtra("sender_name");
-        String company = dataIntent.getStringExtra("company");
-        String location = dataIntent.getStringExtra("location");
-        String profileImageUrl = "no image url (string defined in chat service)";
-        if (dataIntent.getStringExtra("profile_image_url") != null) {
-            profileImageUrl = dataIntent.getStringExtra("profile_image_url");
+        String senderName = dataIntent.getStringExtra(SENDER_NAME);
+        String company = dataIntent.getStringExtra(COMPANY);
+        String location = dataIntent.getStringExtra(LOCATION);
+        String profileImageUrl = NO_IMAGE_URL;
+        if (dataIntent.getStringExtra(PROFILE_IMAGE_URL) != null) {
+            profileImageUrl = dataIntent.getStringExtra(PROFILE_IMAGE_URL);
         }
-        String description = dataIntent.getStringExtra("description");
-        String website = "I still don't have one, maybe it's a good time";
-        if (dataIntent.getStringExtra("website") != null) {
-            website = dataIntent.getStringExtra("website");
+        String description = dataIntent.getStringExtra(DESCRIPTION);
+        String website = NO_WEBSITE;
+        if (dataIntent.getStringExtra(WEBSITE) != null) {
+            website = dataIntent.getStringExtra(WEBSITE);
         }
-        String gcmToken = dataIntent.getStringExtra("sender_reg_id");
+        String gcmToken = dataIntent.getStringExtra(SENDER_REG_ID);
         addressedUser = new Stylist(1, senderName, company, location, profileImageUrl, description, website, gcmToken);
         model = new ChatDataModel(getApplicationContext(), addressedUser);
         imagesController = new ChatImagesController(model);
@@ -129,7 +138,7 @@ public class MultiMessagesGcmService extends IntentService implements ImageLoade
                 .setContentText(message)
                 .setContentIntent(pendingIntent)
                 .setStyle(inbox)
-                .setGroup(MESSAGES_KEY) //TODO: use it to receive multiple notifications
+                .setGroup(MESSAGES_KEY)
                 .setGroupSummary(true)
                 .setAutoCancel(true)
                 .build();
@@ -177,7 +186,7 @@ public class MultiMessagesGcmService extends IntentService implements ImageLoade
 
     @Override
     public void onImageLoaded(String senderName, Bitmap scaledBitmap, ChatItem.ItemType itemType, Uri imageUri) {
-        Uri finalImageUri = ImageUtils.createImageUri(this, scaledBitmap); //send uri of the final ROTATED image
+        Uri finalImageUri = ImageUtils.createImageUri(this, scaledBitmap);
         imagesController.presentChatItemsOnScreen(senderName, scaledBitmap, finalImageUri, null, ChatItem.ItemType.IMAGE_LEFT);
     }
 }

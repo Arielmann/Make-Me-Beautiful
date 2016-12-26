@@ -15,9 +15,6 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-/**
- * Created by home on 5/18/2016.
- */
 public class UploadImage extends AsyncTask<Void, String, String> {
 
     private String regId;
@@ -71,6 +68,7 @@ public class UploadImage extends AsyncTask<Void, String, String> {
 
             dos.writeBytes(lineEnd);
             Log.d(TAG, "parameters were written as bytes");
+            Log.d(TAG, "file size: " + sourceFile.length());
 
             // create a buffer of  maximum size
             int bytesAvailable = fileInputStream.available();
@@ -101,7 +99,6 @@ public class UploadImage extends AsyncTask<Void, String, String> {
                     + serverResponseMessage + ": " + serverResponseCode);
 
             if (serverResponseCode == 200) {
-                //  FilePathsArray.getHashMap().clear(); - deactivated for tests only!
             }
 
             //close the streams //

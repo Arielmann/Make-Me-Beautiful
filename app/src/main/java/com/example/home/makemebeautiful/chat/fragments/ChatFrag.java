@@ -28,7 +28,11 @@ public class ChatFrag extends Fragment {
         Log.d(CHAT_FRAG_TAG, "Controller: " + controller.toString());
         recyclerView.setLayoutManager(model.getLayoutManager());
         recyclerView.setAdapter(model.getAdapter());
+        try {
         recyclerView.scrollToPosition(model.getChatItems().size() - 1);
+        }catch (NullPointerException e){
+            e.printStackTrace();
+        }
 
     }
 

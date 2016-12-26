@@ -12,12 +12,9 @@ import com.example.home.makemebeautiful.profile.profilemodels.Stylist;
 
 import java.util.List;
 
-/**
- * Created by home on 8/23/2016.
- */
 public class ChatDataModel {
 
-    private static final String TAG = "Chat Data Model";
+    private static final String TAG = ChatDataModel.class.getName();
     private Context context;
     private ChatAdapter adapter;
     private LinearLayoutManager layoutManager;

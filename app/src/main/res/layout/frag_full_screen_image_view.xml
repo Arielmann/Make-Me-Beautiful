@@ -8,7 +8,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/fullScreenImageView"
-        android:scaleType="center"
+        android:scaleType="centerCrop"
         android:layout_gravity="center_horizontal"
         android:layout_centerInParent="true" />
 </RelativeLayout>

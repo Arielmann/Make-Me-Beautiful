@@ -18,9 +18,6 @@ import com.example.home.makemebeautiful.profile.profilemodels.Stylist;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
-/**
- * Created by home on 8/13/2016.
- */
 public class StylistListFromServerViewHolder extends GenericViewHolder implements ImageLoader {
 
     private static final String TAG = "Stylists from serve VH";
@@ -53,18 +50,20 @@ public class StylistListFromServerViewHolder extends GenericViewHolder implement
                 this.stylistLocationTextView.setText(location);
             }
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
     private void setImageInView(int position) {
-        Bitmap profileImage = dataSet.get(position).getUserImageBitmap();
-        if (profileImage.sameAs(ImageUtils.defaultProfileImage)) {
-            stylistImageView.setImageBitmap(dataSet.get(position).getUserImageBitmap());
+        Bitmap fullSizeImage = dataSet.get(position).getUserImageBitmap();
+        Bitmap scaledProfileImage = ImageUtils.createSquaredScaledBitmap(context, fullSizeImage, 2);
+        if (scaledProfileImage.sameAs(ImageUtils.defaultProfileImage)) {
+            stylistImageView.setImageBitmap(scaledProfileImage);
             startDownloadingProfileImageProcess(position);
             Log.d(TAG, dataSet.get(position).getName() + "'s profile image is default, start downloading image from server");
             return;
         }
-        stylistImageView.setImageBitmap(profileImage);
+        stylistImageView.setImageBitmap(scaledProfileImage);
         Log.d(TAG, dataSet.get(position).getName() + "'s chosen profile image was set dircetly from the dataset, without downloading");
     }
 
