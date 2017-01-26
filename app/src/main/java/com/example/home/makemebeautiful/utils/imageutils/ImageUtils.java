@@ -11,7 +11,6 @@ import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.DecodeFormat;
@@ -21,8 +20,8 @@ import com.example.home.makemebeautiful.R;
 import com.example.home.makemebeautiful.chat.adapter.GenericViewHolder;
 import com.example.home.makemebeautiful.chat.model.ChatItem;
 import com.example.home.makemebeautiful.contactedusers.model.ContactedUserRow;
-import com.example.home.makemebeautiful.profile.sharedprefrences.SharedPrefManager;
 import com.example.home.makemebeautiful.profile.profilemodels.Stylist;
+import com.example.home.makemebeautiful.profile.sharedprefrences.SharedPrefManager;
 import com.squareup.picasso.Picasso;
 
 import java.io.File;
@@ -236,9 +235,13 @@ public class ImageUtils {
         String fileNameWithSpace = "Contact_" + senderName + ".jpg";
         String finalFileName = fileNameWithSpace.replace(' ', '_');
         File newProfileImageFile = ImageUtils.writeBitmapToFile(profileImage, fileDirName, finalFileName);
-        addressedUser.setProfileImagePath(newProfileImageFile.getAbsolutePath());
+        try {
+            addressedUser.setProfileImagePath(newProfileImageFile.getAbsolutePath());
+        }catch(NullPointerException e){
+            e.printStackTrace();
+            Log.e(TAG, "Image file is null");
+        }
     }
-
 
     public static void fetchUserProfileImage(Context context, Object interfaceHolder) {
         int squareImageSize = ImageUtils.chooseImageSizesForSquare(context, 2);
