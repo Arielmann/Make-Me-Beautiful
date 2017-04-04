@@ -1,13 +1,12 @@
 package com.example.home.makemebeautiful.choosestylist.stylist_details_screen;
 
 import android.support.v4.app.Fragment;
-import com.example.home.makemebeautiful.R;
 
+import com.example.home.makemebeautiful.R;
 import com.example.home.makemebeautiful.profile.profilemodels.Stylist;
 import com.example.home.makemebeautiful.utils.handlers.FontsManager.FontLoader;
-import com.example.home.makemebeautiful.utils.imageutils.ImageUtils;
 
-public class StylistDetailsModel {
+class StylistDetailsModel {
 
         /*
         * This model is INDIRECTLY responsible to create a ChatScreen
@@ -21,21 +20,21 @@ public class StylistDetailsModel {
     private final Stylist addressedStylist;
     private final TextViewDetails[] textViewsDetails = new TextViewDetails[5];
 
-    public TextViewDetails[] getTextViewsDetails() {
+    TextViewDetails[] getTextViewsDetails() {
         return textViewsDetails;
     }
 
-    public StylistDetailsModel(Fragment fragment, Stylist addressedStylist) {
+    StylistDetailsModel(Fragment fragment, Stylist addressedStylist) {
         this.addressedStylist = addressedStylist;
         onStylistClicked = new OnStylistClickedForSendImages(fragment.getActivity(), addressedStylist);
         initTextViewsInfo();
     }
 
-    protected OnStylistClickedForSendImages getOnStylistClickedForSendImages() {
+    OnStylistClickedForSendImages getOnStylistClickedForSendImages() {
         return onStylistClicked;
     }
 
-    protected Stylist getAddressedStylist() {
+    Stylist getAddressedStylist() {
         return addressedStylist;
     }
 

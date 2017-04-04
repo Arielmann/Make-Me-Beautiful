@@ -12,7 +12,6 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
 
@@ -63,7 +62,7 @@ public class ReadStylistsFromServer extends Thread {
 
             StringBuilder builder = new StringBuilder();
             byte[] buffer = new byte[1024 * 8];
-            int counter = 0;
+            int counter;
             while ((counter = inputStream.read(buffer)) != -1) {
                 builder.append(new String(buffer, 0, counter));
             }
