@@ -49,7 +49,7 @@ public class RegisterBasicProfileViewFrag extends GenericSettingsFrag implements
         nameEditText = (EditText) signUpViewLayout.findViewById(R.id.input_name);
         passwordEditText = (EditText) signUpViewLayout.findViewById(R.id.input_password);
         locationEditText = (EditText) signUpViewLayout.findViewById(R.id.input_location);
-        signUpButton = (Button) signUpViewLayout.findViewById(R.id.btn_signup);
+        signUpButton = (Button) signUpViewLayout.findViewById(R.id.btn_signUp);
         //loginLink = (TextView) signUpViewLayout.findViewById(R.id.link_login);
         setModel(new RegisterBasicProfileModel(this));
         signUpButton.setOnClickListener(this);

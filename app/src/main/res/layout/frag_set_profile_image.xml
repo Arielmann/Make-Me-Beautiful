@@ -73,17 +73,18 @@
                 android:layout_gravity="center_horizontal"
                 android:background="#00000000"/>
 
-            <!-- Save description Button -->
+            <!-- Save Image Button -->
             <android.support.v7.widget.AppCompatButton
-                android:id="@+id/saveImage"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/register_button"
+                android:id="@+id/btn_saveImage"
+                android:layout_width="125dp"
+                android:layout_height="50dp"
                 android:layout_marginBottom="24dp"
                 android:layout_marginTop="24dp"
+                android:layout_gravity="center"
+                android:background="@drawable/done_button"
                 android:padding="12dp"
-                android:text="Finish registration"
-                android:layout_weight="0.2" />
+                android:gravity="center" />
+
 
 
         </LinearLayout>

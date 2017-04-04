@@ -31,7 +31,7 @@ public class SetProfileImageViewFrag extends Fragment {
         presentingImageView = (ImageView) setProfileImageLayout.findViewById(R.id.profileImageView);
         openImagesPickerButton = (ImageButton) setProfileImageLayout.findViewById(R.id.cameraImageButton);
         openImagesPickerButton.setOnClickListener(model);
-        saveImageButton = (Button) setProfileImageLayout.findViewById(R.id.saveImage);
+        saveImageButton = (Button) setProfileImageLayout.findViewById(R.id.btn_saveImage);
         saveImageButton.setOnClickListener(model.saveImage); //TODO: put alert message if user hasn't chose any image (need to build seperate classes for alerts and combine it in a GoToScreen's listener)
         presentingImageView.setImageResource(R.drawable.female_icon);
         return setProfileImageLayout;

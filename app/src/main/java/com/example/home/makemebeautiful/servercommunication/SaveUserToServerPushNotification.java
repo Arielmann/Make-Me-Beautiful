@@ -15,14 +15,11 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 
-/**
- * Created by home on 5/8/2016.
- */
 public class SaveUserToServerPushNotification extends AsyncTask<String, Void, Boolean> {
 
     private static final String SAVE_USER_TAG = "Save user to server";
-    Context context;
-    OnPushNotificationSent onPushSent;
+    private Context context;
+    private OnPushNotificationSent onPushSent;
 
     public SaveUserToServerPushNotification(Context context, OnPushNotificationSent interfaceHolder) {
         this.context = context;
