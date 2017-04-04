@@ -16,17 +16,15 @@ import android.widget.TextView;
 
 import com.example.home.makemebeautiful.R;
 import com.example.home.makemebeautiful.profile.profilemodels.Stylist;
+import com.example.home.makemebeautiful.utils.handlers.FontsManager;
+import com.example.home.makemebeautiful.utils.imageutils.ImageUtils;
 
 import org.greenrobot.eventbus.EventBus;
 
-/**
- * Created by home on 8/16/2016.
- */
 public class StylistDetailsFrag extends Fragment {
 
     private View stylistDetailsLayout;
     private StylistDetailsModel model;
-    private ImageView stylistImageView;
     private Button goToChatScreen;
 
     @Nullable
@@ -42,19 +40,19 @@ public class StylistDetailsFrag extends Fragment {
         model = new StylistDetailsModel(this, addressedStylist);
         setImageInView(stylistDetailsLayout);
         goToChatScreen.setOnClickListener(model.getOnStylistClickedForSendImages());
-        writeTextInTextViews(stylistDetailsLayout);
+        setTextViewData(stylistDetailsLayout);
     }
 
-
-    private void writeTextInTextViews(View stylistDetailsLayout) {
+    private void setTextViewData(View stylistDetailsLayout) {
         for (TextViewDetails textDetails : model.getTextViewsDetails()) {
             TextView textView = (TextView) stylistDetailsLayout.findViewById(textDetails.getRIndexNumber());
             textView.setText(textDetails.getText());
+            FontsManager.setUpFontOnTV(getActivity().getAssets(), textDetails.getFont(), textView);
         }
     }
 
     private void setImageInView(View stylistDetailsLayout) {
-        stylistImageView = (ImageView) stylistDetailsLayout.findViewById(R.id.stylistImageInDetailsScreen);
+        ImageView stylistImageView = (ImageView) stylistDetailsLayout.findViewById(R.id.stylistImageInDetailsScreen);
         try {
             Bitmap userProfileImage = model.getAddressedStylist().getUserImageBitmap();
             Bitmap finalBitmap = generateScreenWidthSizedBitmap();
@@ -69,8 +67,7 @@ public class StylistDetailsFrag extends Fragment {
     private Bitmap generateScreenWidthSizedBitmap() {
         Point screenSize = new Point();
         getActivity().getWindowManager().getDefaultDisplay().getSize(screenSize);
-        Bitmap bitmap = Bitmap.createBitmap(screenSize.x, screenSize.x, Bitmap.Config.ARGB_8888);
-        return bitmap;
+        return Bitmap.createBitmap(screenSize.x, screenSize.x, Bitmap.Config.ARGB_8888);
     }
 
     private void drawProfileImageIntoEmptyBitmap(Bitmap userProfileImage, Bitmap emptyBitmap){

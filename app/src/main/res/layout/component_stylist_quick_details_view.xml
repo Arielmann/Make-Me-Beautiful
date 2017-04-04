@@ -1,45 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <View
+<!--    <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@android:color/black" />
+        android:background="@android:color/black"
+        android:id="@+id/view2" />-->
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/quickStylistImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:adjustViewBounds="true"
-        android:scaleType="centerCrop"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:padding="2dp"/>
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:src="@drawable/amsterdam"
+        android:layout_alignTop="@+id/quickStylistName"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:id="@+id/quickStylistName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="@dimen/stylist_name_quick_details_Size"
         android:text="Stylist name"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/quickStylistImage"
-        android:layout_centerHorizontal="true" />
+        android:textColor="@color/md_white_1000"
+        android:layout_marginTop="13dp"
+        android:layout_below="@+id/view2"
+        android:layout_toLeftOf="@+id/quickStylistImage"
+        android:layout_toStartOf="@+id/quickStylistImage"
+        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp" />
 
     <TextView
         android:id="@+id/quickStylistLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="@dimen/stylist_location_quick_details_Size"
         android:text="Stylist location"
-        android:layout_gravity="center_horizontal"
-        android:layout_alignWithParentIfMissing="false"
-        android:layout_marginTop="10dp"
+        android:textColor="@color/md_white_1000"
         android:layout_below="@+id/quickStylistName"
-        android:layout_centerHorizontal="true" />
+        android:layout_toLeftOf="@+id/quickStylistImage"
+        android:layout_toStartOf="@+id/quickStylistImage"
+         />
+
 </RelativeLayout>

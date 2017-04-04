@@ -75,7 +75,7 @@ public class ToolbarFrag extends Fragment implements ImageLoader, OnImageLoading
         Bitmap profileImage = SharedPrefManager.getInstance(null).getUserImageBitmap();
         AccountHeader header = new AccountHeaderBuilder()
                 .withActivity(getActivity())
-                .withHeaderBackground(R.drawable.teal_bg)
+                .withHeaderBackground(R.drawable.blue_layer)
                 .withAccountHeader(R.layout.material_drawer_compact_persistent_header)
                 .withThreeSmallProfileImages(false)
                 .withSelectionListEnabled(false)

@@ -10,7 +10,7 @@ public class RegisterBasicProfileActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        AppDataInit.initCrashesMonitor(this);
+        //AppDataInit.initCrashesMonitor(this);
         AppDataInit.createDirectories();
         setContentView(com.example.home.makemebeautiful.R.layout.activity_register_basic_profile);
     }

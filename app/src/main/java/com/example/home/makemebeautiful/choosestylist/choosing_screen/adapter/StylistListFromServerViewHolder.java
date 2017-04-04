@@ -11,6 +11,8 @@ import android.widget.TextView;
 import com.example.home.makemebeautiful.R;
 import com.example.home.makemebeautiful.chat.adapter.GenericViewHolder;
 import com.example.home.makemebeautiful.chat.model.ChatItem;
+import com.example.home.makemebeautiful.utils.handlers.FontsManager;
+import com.example.home.makemebeautiful.utils.handlers.FontsManager.FontLoader;
 import com.example.home.makemebeautiful.utils.imageutils.ImageUtils;
 import com.example.home.makemebeautiful.utils.imageutils.ImageLoader;
 import com.example.home.makemebeautiful.profile.profilemodels.Stylist;
@@ -18,23 +20,25 @@ import com.example.home.makemebeautiful.profile.profilemodels.Stylist;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
-public class StylistListFromServerViewHolder extends GenericViewHolder implements ImageLoader {
+import de.hdodenhof.circleimageview.CircleImageView;
+
+class StylistListFromServerViewHolder extends GenericViewHolder implements ImageLoader {
 
     private static final String TAG = "Stylists from serve VH";
     private final Context context;
-    private final View view;
-    private final ImageView stylistImageView;
+    private final CircleImageView stylistImageView;
     private final TextView stylistNameTextView;
     private final TextView stylistLocationTextView;
     private List<Stylist> dataSet;
 
-    protected StylistListFromServerViewHolder(Context context, View itemView, List<Stylist> dataSet) {
+    StylistListFromServerViewHolder(Context context, View itemView, List<Stylist> dataSet) {
         super(itemView);
         this.context = context;
-        this.view = itemView;
-        this.stylistImageView = (ImageView) view.findViewById(R.id.quickStylistImage);
-        this.stylistNameTextView = (TextView) view.findViewById(R.id.quickStylistName);
-        this.stylistLocationTextView = (TextView) view.findViewById(R.id.quickStylistLocation);
+        this.stylistImageView = (CircleImageView) itemView.findViewById(R.id.quickStylistImage);
+        this.stylistNameTextView = (TextView) itemView.findViewById(R.id.quickStylistName);
+        this.stylistLocationTextView = (TextView) itemView.findViewById(R.id.quickStylistLocation);
+        FontsManager.setUpFontOnTV(context.getAssets(), FontLoader.MONTSERRAT_BOLD, stylistNameTextView);
+        FontsManager.setUpFontOnTV(context.getAssets(), FontLoader.MONTSERRAT_BOLD, stylistLocationTextView);
         this.dataSet = dataSet;
     }
 
@@ -46,6 +50,7 @@ public class StylistListFromServerViewHolder extends GenericViewHolder implement
 
             if (name != null && location != null) {
                 setImageInView(position);
+                stylistImageView.setImageBitmap(dataSet.get(position).getUserImageBitmap());
                 this.stylistNameTextView.setText(name);
                 this.stylistLocationTextView.setText(location);
             }

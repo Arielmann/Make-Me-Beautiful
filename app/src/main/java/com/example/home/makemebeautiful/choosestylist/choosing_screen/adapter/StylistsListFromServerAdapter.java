@@ -12,9 +12,6 @@ import com.example.home.makemebeautiful.profile.profilemodels.Stylist;
 
 import java.util.List;
 
-/**
- * Created by home on 8/13/2016.
- */
 public class StylistsListFromServerAdapter extends RecyclerView.Adapter<GenericViewHolder> {
 
     private List<Stylist> dataSet;

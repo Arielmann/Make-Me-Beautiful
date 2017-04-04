@@ -15,9 +15,6 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 
-/**
- * Created by home on 5/29/2016.
- */
 public class SendMessagePushNotification extends AsyncTask<Void, Void, Void> {
 
     /*
@@ -44,7 +41,7 @@ public class SendMessagePushNotification extends AsyncTask<Void, Void, Void> {
         HashMap<String, String> stringStringHashMap = SharedPrefManager.getInstance(context).initSharedPrefData();
         final HashMap<String, String> userData = stringStringHashMap;
 
-        String[] findMeaning = {"I DON'T KNOW WHY I NEED THIS"}; //TODO: find out this string's meaning
+        String[] findMeaning = {"Idle"}; //TODO: find out this string's meaning
 
         OkHttpClient client = new OkHttpClient();
         final RequestBody requestBody = new MultipartBody.Builder()
@@ -79,7 +76,7 @@ public class SendMessagePushNotification extends AsyncTask<Void, Void, Void> {
                         if (!response.isSuccessful()) {
                             Log.d(TAG, "Failed to send message. response: " + response);;
                         }
-                        Log.d(TAG, "Message successfully sent.");
+                        Log.d(TAG, "Message Sent: " + response);
                     }
                 });
         return null;

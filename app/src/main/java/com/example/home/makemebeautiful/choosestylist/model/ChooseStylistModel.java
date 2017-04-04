@@ -13,9 +13,6 @@ import com.example.home.makemebeautiful.profile.profilemodels.Stylist;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by home on 8/13/2016.
- */
 public class ChooseStylistModel implements OnJsonReceivedFromServer {
 
     private static final String TAG = "Choose stylist model";
@@ -27,14 +24,14 @@ public class ChooseStylistModel implements OnJsonReceivedFromServer {
 
     public static ChooseStylistModel getInstance(Context context) {
         if (instance == null) {
-            instance = new ChooseStylistModel(context);
+            instance = new ChooseStylistModel();
         }
         layoutManager = (new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
         adapter.notifyDataSetChanged();
         return instance;
     }
 
-    private ChooseStylistModel(Context context) {
+    private ChooseStylistModel() {
     }
 
     public RecyclerView.LayoutManager getLayoutManager() {

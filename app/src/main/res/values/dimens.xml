@@ -8,4 +8,6 @@
     <dimen name="fullscreen_status_bar_height">0dp</dimen>
     <dimen name="headline_width">250dp</dimen>
     <dimen name="headline_font_size">35sp</dimen>
+    <dimen name="stylist_name_quick_details_Size">25sp</dimen>
+    <dimen name="stylist_location_quick_details_Size">13sp</dimen>
 </resources>

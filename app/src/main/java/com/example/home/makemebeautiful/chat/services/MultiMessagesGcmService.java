@@ -33,10 +33,6 @@ import org.greenrobot.eventbus.EventBus;
 
 import java.util.List;
 
-/**
- * Created by home on 10/4/2016.
- */
-
 /*
 * NOTE: This class is not yet in use
 */

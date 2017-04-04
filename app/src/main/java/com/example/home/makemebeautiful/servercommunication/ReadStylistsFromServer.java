@@ -16,9 +16,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
 
-/**
- * Created by home on 8/13/2016.
- */
 public class ReadStylistsFromServer extends Thread {
 
     /*
@@ -26,9 +23,9 @@ public class ReadStylistsFromServer extends Thread {
     * Thread is used to make the action asynchronous;
     * */
 
-    OnJsonReceivedFromServer interfaceHolder;
+    private OnJsonReceivedFromServer interfaceHolder;
     private Activity activity;
-    List<Object> stylists = null;
+    private List<Object> stylists = null;
     private int readingTryouts;
 
    /* Context and activity are transferred in order to keep
@@ -43,14 +40,14 @@ public class ReadStylistsFromServer extends Thread {
         this.interfaceHolder = interfaceHolder;
     }
 
-    Runnable notifyDataSetChangedInMainThread = new Runnable() {
+    private Runnable notifyDataSetChangedInMainThread = new Runnable() {
         @Override
         public void run() {
             ChooseStylistModel.getInstance(null).getAdapter().notifyDataSetChanged();
         }
     };
 
-    Runnable startInitializingStylistsDetails = new Runnable() {
+    private Runnable startInitializingStylistsDetails = new Runnable() {
         @Override
         public void run() {
             interfaceHolder.onJsonReceived(activity, stylists);
@@ -84,12 +81,8 @@ public class ReadStylistsFromServer extends Thread {
                     run();
                 }
             }
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-            run();
         } catch (IOException e) {
             e.printStackTrace();
-            run();
         }
     }
 }

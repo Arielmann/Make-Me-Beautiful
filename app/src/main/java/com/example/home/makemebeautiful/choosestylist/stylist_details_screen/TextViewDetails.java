@@ -1,14 +1,15 @@
 package com.example.home.makemebeautiful.choosestylist.stylist_details_screen;
 
-/**
- * Created by home on 8/16/2016.
- */
-public class TextViewDetails {
+import com.example.home.makemebeautiful.utils.handlers.FontsManager.FontLoader;
+
+class TextViewDetails {
     private int rIndexNumber;
+    private FontLoader font;
     private String text;
 
-    public TextViewDetails(int rIndexNumber, String text) {
+    TextViewDetails(int rIndexNumber, FontLoader font, String text) {
         this.rIndexNumber = rIndexNumber;
+        this.font = font;
         this.text = text;
     }
 
@@ -16,7 +17,11 @@ public class TextViewDetails {
         return text;
     }
 
-    public int getRIndexNumber() {
+    int getRIndexNumber() {
         return rIndexNumber;
+    }
+
+    FontLoader getFont() {
+        return font;
     }
 }

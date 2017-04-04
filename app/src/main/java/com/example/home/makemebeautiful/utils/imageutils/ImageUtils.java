@@ -35,9 +35,6 @@ import java.util.Random;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 
-/**
- * Created by home on 6/29/2016.
- */
 public class ImageUtils {
 
     private static final String TAG = "ImageUtils";
@@ -165,7 +162,11 @@ public class ImageUtils {
     public static void downloadProfileImage(Context context, final ImageLoader loader, Stylist stylist, String url) {
         Log.d(TAG, "entered imageUtils download profile image method method for " + stylist.getName() + "'s profile image");
         picassoProfileImageTarget = new PicassoProfileImageTarget(context, loader, stylist, url);
-        Picasso.with(context).load(url).into(picassoProfileImageTarget);
+        try {
+            Picasso.with(context).load(url).into(picassoProfileImageTarget);
+        }catch (IllegalArgumentException e){
+            e.printStackTrace();
+        }
     }
 
     public static void downloadChatImage(final Context context, ImageLoader loader, String senderName, final String url) {

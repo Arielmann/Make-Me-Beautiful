@@ -17,9 +17,7 @@ import com.sromku.simple.storage.Storage;
 
 import java.util.concurrent.ExecutionException;
 
-/**
- * Created by home on 9/13/2016.
- */
+
 public class AppDataInit {
 
 /*
@@ -100,3 +98,4 @@ public class AppDataInit {
 
 
 
+// public static Stylist mockStylist = new Stylist(1, "Ariel Mann", "A-Style", "Tel-Aviv Yafo", ImageUtils.testImagePath, "This is a long description describing who am I and what am I doing here right now and that I would be glad to help if I can", "www.astyle.com", "Token");;

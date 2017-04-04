@@ -7,19 +7,14 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@drawable/teal_bg"
+    android:background="@drawable/welcome_image_and_layer"
     tools:context=".homescreen.WelcomeScreenActivity">
-
-    <!--<include
-        android:id="@+id/customToolbar"
-        layout="@layout/component_toolbar_main"/>-->
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:layout_weight="1"
         android:id="@+id/linearLayout2">
 
      <fragment
@@ -32,7 +27,7 @@
 
     </LinearLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -41,26 +36,41 @@
         android:layout_alignParentStart="true">
 
         <TextView
+            android:id="@+id/welcomeTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Choose a stylist and send  your images!"
-            android:id="@+id/textView"
-            android:layout_marginTop="100dp"
-            android:textAlignment="center"/>
+            android:text="Welcome"
+            android:textAlignment="center"
+            android:textSize="40sp"
+            android:textColor="@color/md_white_1000"
+            android:layout_marginBottom="13dp"
+            android:layout_above="@+id/welcomeScreenExplanation"
+            android:layout_centerHorizontal="true" />
 
-        <Space
-            android:layout_width="1dp"
-            android:layout_height="70dp"/>
+        <TextView
+            android:id="@+id/welcomeScreenExplanation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose a Stylist and send your images!"
+            android:textAlignment="center"
+            android:textSize="25sp"
+            android:textColor="@color/md_white_1000"
+            android:layout_marginBottom="53dp"
+            android:layout_above="@+id/goToChooseStylistScreen"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
         <Button
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:text="Start!"
-            android:background="@drawable/start_using_app_button"
             android:id="@+id/goToChooseStylistScreen"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
-           />
-    </LinearLayout>
+            android:background="@drawable/get_started_bg"
+            android:text="Get Started"
+            android:textColor="@color/md_white_1000"
+            android:layout_marginBottom="115dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
 
 </RelativeLayout>

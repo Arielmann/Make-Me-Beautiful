@@ -4,10 +4,9 @@ import android.support.v4.app.Fragment;
 import com.example.home.makemebeautiful.R;
 
 import com.example.home.makemebeautiful.profile.profilemodels.Stylist;
+import com.example.home.makemebeautiful.utils.handlers.FontsManager.FontLoader;
+import com.example.home.makemebeautiful.utils.imageutils.ImageUtils;
 
-/**
- * Created by home on 8/16/2016.
- */
 public class StylistDetailsModel {
 
         /*
@@ -41,10 +40,10 @@ public class StylistDetailsModel {
     }
 
     private void initTextViewsInfo(){
-        textViewsDetails[0] = new TextViewDetails(R.id.stylistNameInDetailsScreen, addressedStylist.getName());
-        textViewsDetails[1] = new TextViewDetails(R.id.companyInDetailsScreen, addressedStylist.getCompany());
-        textViewsDetails[2] = new TextViewDetails(R.id.locationInDetailsScreen, addressedStylist.getLocation());
-        textViewsDetails[3] = new TextViewDetails(R.id.websiteInDetailsScreen, addressedStylist.getWebsite());
-        textViewsDetails[4] = new TextViewDetails(R.id.descriptionInDetailsScreen, addressedStylist.getDescription());
+        textViewsDetails[0] = new TextViewDetails(R.id.stylistNameInDetailsScreen, FontLoader.MONTSERRAT_BOLD, addressedStylist.getName());
+        textViewsDetails[1] = new TextViewDetails(R.id.companyInDetailsScreen, FontLoader.MONTSERRAT_REGULAR, addressedStylist.getCompany());
+        textViewsDetails[2] = new TextViewDetails(R.id.locationInDetailsScreen, FontLoader.MONTSERRAT_REGULAR, addressedStylist.getLocation());
+        textViewsDetails[3] = new TextViewDetails(R.id.websiteInDetailsScreen, FontLoader.MONTSERRAT_REGULAR, addressedStylist.getWebsite());
+        textViewsDetails[4] = new TextViewDetails(R.id.descriptionInDetailsScreen, FontLoader.MONTSERRAT_REGULAR, addressedStylist.getDescription());
     }
 }

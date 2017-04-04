@@ -11,6 +11,7 @@ import android.widget.FrameLayout;
 
 //import com.example.home.makemebeautiful.chat.fragments.AddressedUserChatDetailsFrag;
 import com.example.home.makemebeautiful.chat.model.MessageItemsFromServer;
+import com.example.home.makemebeautiful.profile.sharedprefrences.SharedPrefManager;
 import com.example.home.makemebeautiful.utils.handlers.FragmentBuilder;
 import com.example.home.makemebeautiful.R;
 import com.example.home.makemebeautiful.chat.controllers.ChatImagesController;
@@ -22,7 +23,6 @@ import com.example.home.makemebeautiful.utils.imageutils.ChooseImageProvider;
 import com.example.home.makemebeautiful.utils.imageutils.ImageLoader;
 import com.example.home.makemebeautiful.utils.imageutils.ImageUtils;
 import com.example.home.makemebeautiful.utils.imageutils.fragments.FullScreenImageViewFrag;
-import com.example.home.makemebeautiful.profile.sharedprefrences.SharedPrefManager;
 import com.example.home.makemebeautiful.profile.profilemodels.Stylist;
 
 import org.greenrobot.eventbus.EventBus;

@@ -12,118 +12,94 @@
         <ScrollView
             android:id="@+id/scrollView"
             android:layout_width="match_parent"
-            android:layout_weight="1"
-            android:layout_height="match_parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_weight="1">
 
-            <ImageView
-                android:id="@+id/stylistImageInDetailsScreen"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:scaleType="fitCenter">
-        </ImageView>
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/stylistNameInDetailsScreen"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="top|left|center"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
-            android:text="Name"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+                <ImageView
+                    android:id="@+id/stylistImageInDetailsScreen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/female_icon"></ImageView>
 
-        <TextView
-            android:id="@+id/companyInDetailsScreen"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left|center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
-            android:text="company" />
+                <TextView
+                    android:id="@+id/stylistNameInDetailsScreen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:text="Name"
+                    android:textColor="@color/md_white_1000"
+                    android:textSize="45sp" />
 
+                <TextView
+                    android:id="@+id/companyInDetailsScreen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:text="company"
+                    android:textColor="@color/md_white_1000"
+                    android:textSize="20sp" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="20dp"
-            android:background="@android:color/black" />
-
-            <TextView
-                android:id="@+id/locationInDetailsScreen"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left|center"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="10dp"
-                android:text="Location" />
-
-        <TextView
-            android:id="@+id/websiteInDetailsScreen"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left|center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
-            android:text="Website" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="20dp"
-                android:background="@android:color/black" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginRight="20dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/whoAmI"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="50dp"
-                android:text="Who I Am"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+                <TextView
+                    android:id="@+id/descriptionInDetailsScreen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
+                    android:textColor="@color/md_white_1000"
+                    android:text="Stylist description screen"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
 
 
-            <TextView
-                android:id="@+id/descriptionInDetailsScreen"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20dp"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+                <TextView
+                    android:id="@+id/locationInDetailsScreen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/md_white_1000"
+                    android:text="Location" />
 
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/websiteInDetailsScreen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/md_white_1000"
+                    android:text="Website" />
 
-    </LinearLayout>
-</ScrollView>
+
+            </LinearLayout>
+        </ScrollView>
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_gravity="center"
             android:layout_weight="10"
-            android:layout_gravity="center">
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/goToChatScreen"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="75dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:background="@drawable/continue_button"
+                android:background="@drawable/send_photos_button_background"
                 android:text="Send Photos!" />
         </LinearLayout>
 
     </LinearLayout>
 
-    </LinearLayout>
+</LinearLayout>

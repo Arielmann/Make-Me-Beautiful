@@ -51,7 +51,7 @@ public class UploadImage extends AsyncTask<Void, String, String> {
             conn.setDoOutput(true); // Allow Outputs
             conn.setUseCaches(false); // Don't use a Cached Copy
             conn.setRequestMethod("POST");
-            conn.setRequestProperty("Connection", "Keep-Alive"); //keep connection alive after headres were sent
+            conn.setRequestProperty("Connection", "Keep-Alive"); //keep connection alive after headers were sent
             conn.setRequestProperty("ENCTYPE", "multipart/form-data"); //multipart indicates that server should read it AS BYTES
             String boundary = "*****";
             conn.setRequestProperty("Content-Type", "multipart/form-data;boundary=" + boundary); //serve expects to get Stream of BYTES

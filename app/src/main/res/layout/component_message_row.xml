@@ -1,33 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal" android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="bottom"
+    android:orientation="horizontal">
+
 
 
     <ImageButton
-        android:layout_width="52dp"
-        android:layout_height="50dp"
-        android:src="@drawable/ic_action_send"
+        android:id="@+id/cameraImageButton"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="5dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
         android:background="#00000000"
-        android:rotation="180"
-        android:id="@+id/sendButton" />
+        android:src="@drawable/chat_add_image" />
+
 
     <EditText
+        android:id="@+id/textTypeField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textTypeField"
-        android:layout_gravity="left"
-        android:layout_weight="10"/>
+        android:layout_weight="10"
+        android:gravity="bottom" />
+
 
     <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/camera_black_48"
-        android:id="@+id/cameraImageButton"
-        android:background="#00000000"
+        android:id="@+id/sendButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginRight="5dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="1"></ImageButton>
+        android:background="#00000000"
+        android:rotation="180"
+        android:src="@drawable/chat_send_button" />
 
 </LinearLayout>

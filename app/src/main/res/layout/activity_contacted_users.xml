@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/teal_bg"
+    android:background="@drawable/appbg"
     android:orientation="vertical"
     tools:context=".contactedusers.ContactedUsersActivity">
 
@@ -12,7 +12,7 @@
         android:name="com.example.home.makemebeautiful.toolbar.ToolbarFrag"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"></fragment>
+        android:layout_gravity="center" />
 
     <RelativeLayout
         android:id="@+id/contactedUsersInnerRelativeLayout"

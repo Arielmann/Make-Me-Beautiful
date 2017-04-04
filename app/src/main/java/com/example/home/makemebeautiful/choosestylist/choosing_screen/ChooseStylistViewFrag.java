@@ -11,17 +11,12 @@ import android.view.ViewGroup;
 import com.example.home.makemebeautiful.R;
 import com.example.home.makemebeautiful.choosestylist.model.ChooseStylistModel;
 
-/**
- * Created by home on 8/13/2016.
- */
 public class ChooseStylistViewFrag extends Fragment {
 
     private RecyclerView recyclerView;
-    private ChooseStylistModel model;
-
 
     public void setFragData() {
-        model = ChooseStylistModel.getInstance(getActivity());
+        ChooseStylistModel model = ChooseStylistModel.getInstance(getActivity());
         recyclerView.setLayoutManager(model.getLayoutManager());
         recyclerView.setAdapter(model.getAdapter());
         model.getAdapter().setContext(getContext());
