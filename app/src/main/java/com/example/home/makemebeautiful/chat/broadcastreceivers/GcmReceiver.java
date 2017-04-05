@@ -9,10 +9,6 @@ import android.util.Log;
 
 import com.example.home.makemebeautiful.chat.services.MultiMessagesGcmService;
 
-
-/**
- * Created by home on 5/30/2016.
- */
 public class GcmReceiver extends WakefulBroadcastReceiver {
 
     private static final String TAG = "Gcm receiver";

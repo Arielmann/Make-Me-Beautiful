@@ -36,6 +36,7 @@ public class SaveUserToServerPushNotification extends AsyncTask<String, Void, Bo
                 .addFormDataPart("FindMeaning", "FindMeaningValue",
                         RequestBody.create(MediaType.parse("text/csv"), "FindMeaningValue"))
                 .addFormDataPart("name", userData.get("name"))
+                .addFormDataPart("password", userData.get("password"))
                 .addFormDataPart("location", userData.get("location"))
                 .addFormDataPart("profile_image_url", userData.get("profileImageUrl"))
                 .addFormDataPart("description", userData.get("description"))
