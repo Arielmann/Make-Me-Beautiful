@@ -72,12 +72,12 @@ public class AppDataInit {
 
     public static void initAppDataWithProgDialog(final Context context, final Object interfaceHolder) {
         final ProgressDialog progressDialog = new ProgressDialog(context,
-                R.style.AppTheme);
+                R.style.MMBAppTheme);
         initAppData(context);
         //will provoke onImageLoaded OR onImageLoadingError in ToolBarFrag
         ImageUtils.fetchUserProfileImage(context, interfaceHolder);
         progressDialog.setIndeterminate(true);
-        progressDialog.setMessage("Initializing");
+        progressDialog.setMessage(" Initializing");
         progressDialog.show();
 
         new android.os.Handler().postDelayed(

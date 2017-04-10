@@ -10,19 +10,6 @@ import com.example.home.makemebeautiful.profile.profilemodels.Stylist;
 import org.greenrobot.eventbus.EventBus;
 
 class OnStylistClickedForSendImages implements View.OnClickListener {
-    /*
-    * This model is designed to go to chat
-    * screen AND create a new conversation
-    * in sqlite once the user opened the chat
-    * window with a new stylist
-    *
-    * The model creates a ChatScreen DIRECTLY.
-    * It MUST transfer a valid stylist
-    * to the ChatScreen so it can use
-    * it to save it's name in the
-    * "conversation_name" column
-    * in the ChatItemsTable.
-    */
 
     public Intent getIntent() {
         return goToChatScreen;

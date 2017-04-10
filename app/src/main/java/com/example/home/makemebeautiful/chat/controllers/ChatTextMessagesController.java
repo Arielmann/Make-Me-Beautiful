@@ -10,9 +10,6 @@ import com.example.home.makemebeautiful.contactedusers.model.ContactedUsersRowsH
 import com.example.home.makemebeautiful.servercommunication.SendMessagePushNotification;
 import com.example.home.makemebeautiful.profile.profilemodels.Stylist;
 
-/**
- * Created by home on 7/8/2016.
- */
 public class ChatTextMessagesController extends IChatController {
     private static final String CHAT_TEXT_CONTROLLER_TAG = "Chat text controller";
 
@@ -25,7 +22,7 @@ public class ChatTextMessagesController extends IChatController {
     * */ //TODO: improve this method, should be ONE PURPOSE
 
 
-    ChatDataModel model;
+    private ChatDataModel model;
 
     public ChatTextMessagesController(ChatDataModel model) {
         this.model = model;

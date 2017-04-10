@@ -28,9 +28,6 @@ import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 
 import java.util.concurrent.ExecutionException;
 
-/**
- * Created by home on 7/26/2016.
- */
 public class ToolbarFrag extends Fragment implements ImageLoader, OnImageLoadingError {
 
     //TODO: test this frag when profile image is default or badly defined
@@ -41,7 +38,6 @@ public class ToolbarFrag extends Fragment implements ImageLoader, OnImageLoading
     private GoToScreenFromDrawerItem goToContactedUsersScreen;
     private View toolbarLayout;
     private Drawer drawer;
-    private ProfileDrawerItem profileDrawerItem;
 
     @Nullable
     @Override
@@ -73,7 +69,7 @@ public class ToolbarFrag extends Fragment implements ImageLoader, OnImageLoading
         String userName = SharedPrefManager.getInstance(getContext()).getUserName();
         String location = SharedPrefManager.getInstance(getContext()).getUserLocation();
         Bitmap profileImage = SharedPrefManager.getInstance(null).getUserImageBitmap();
-        AccountHeader header = new AccountHeaderBuilder()
+        return new AccountHeaderBuilder()
                 .withActivity(getActivity())
                 .withHeaderBackground(R.drawable.blue_layer)
                 .withAccountHeader(R.layout.material_drawer_compact_persistent_header)
@@ -83,7 +79,6 @@ public class ToolbarFrag extends Fragment implements ImageLoader, OnImageLoading
                         new ProfileDrawerItem().withName(userName).withEmail(location).withIcon(profileImage)
                 )
                 .build();
-        return header;
     }
 
     private void buildDrawer(){
@@ -96,7 +91,6 @@ public class ToolbarFrag extends Fragment implements ImageLoader, OnImageLoading
                 .withActivity(getActivity())
                 .withToolbar(toolbar)
                 .withAccountHeader(createAccountHeader())
-                //TODO: implement account header in code
                 .addDrawerItems(sendPhotoItem, messagesItem).
                         build();
         setOnDrawerItemsClickListeners();

@@ -1,19 +1,16 @@
 package com.example.home.makemebeautiful.chat.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.support.v7.widget.RecyclerView;
 
 import com.example.home.makemebeautiful.R;
 import com.example.home.makemebeautiful.chat.model.ChatItem;
 
 import java.util.List;
 
-/**
- * Created by home on 6/28/2016.
- */
 public class ChatAdapter extends RecyclerView.Adapter<GenericViewHolder> {
 
     private List<ChatItem> dataSet;

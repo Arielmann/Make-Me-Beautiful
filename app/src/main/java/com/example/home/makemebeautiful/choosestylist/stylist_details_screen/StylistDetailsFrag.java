@@ -17,9 +17,10 @@ import android.widget.TextView;
 import com.example.home.makemebeautiful.R;
 import com.example.home.makemebeautiful.profile.profilemodels.Stylist;
 import com.example.home.makemebeautiful.utils.handlers.FontsManager;
-import com.example.home.makemebeautiful.utils.imageutils.ImageUtils;
 
 import org.greenrobot.eventbus.EventBus;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class StylistDetailsFrag extends Fragment {
 
@@ -38,7 +39,7 @@ public class StylistDetailsFrag extends Fragment {
     protected void initVars() {
         Stylist addressedStylist = EventBus.getDefault().removeStickyEvent(Stylist.class);
         model = new StylistDetailsModel(this, addressedStylist);
-        setImageInView(stylistDetailsLayout);
+        setImageInViews(stylistDetailsLayout);
         goToChatScreen.setOnClickListener(model.getOnStylistClickedForSendImages());
         setTextViewData(stylistDetailsLayout);
     }
@@ -51,13 +52,15 @@ public class StylistDetailsFrag extends Fragment {
         }
     }
 
-    private void setImageInView(View stylistDetailsLayout) {
+    private void setImageInViews(View stylistDetailsLayout) {
         ImageView stylistImageView = (ImageView) stylistDetailsLayout.findViewById(R.id.stylistImageInDetailsScreen);
+        CircleImageView stylistCircularImageView = (CircleImageView) stylistDetailsLayout.findViewById(R.id.stylistCircularProfileImageInStylistDetailsScreen);
         try {
             Bitmap userProfileImage = model.getAddressedStylist().getUserImageBitmap();
             Bitmap finalBitmap = generateScreenWidthSizedBitmap();
             drawProfileImageIntoEmptyBitmap(userProfileImage, finalBitmap);
             stylistImageView.setImageBitmap(finalBitmap);
+            stylistCircularImageView.setImageBitmap(finalBitmap);
             // stylistImageView.setImageBitmap(model.getAddressedStylist().getUserImageBitmap());
         } catch (NullPointerException e) {
             e.printStackTrace();

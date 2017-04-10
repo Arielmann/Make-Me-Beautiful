@@ -1,8 +1,10 @@
 package com.example.home.makemebeautiful.homescreen;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -23,11 +25,14 @@ public class WelcomeScreenActivity extends AppCompatActivity {
 
     ToolbarFrag toolbarFrag;
     String WELCOME_SCREEN_TAG = "Welcome screen";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.MMBAppTheme);
         super.onCreate(savedInstanceState);
         //AppDataInit.initCrashesMonitor(this);
         setContentView(R.layout.activity_welcome_screen);
+
         toolbarFrag = (ToolbarFrag) getSupportFragmentManager().findFragmentById(R.id.toolbarFragInWelcomeScreen);
         setUpTextViewsFonts();
 

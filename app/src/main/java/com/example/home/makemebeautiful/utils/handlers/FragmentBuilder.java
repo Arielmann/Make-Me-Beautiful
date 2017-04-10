@@ -7,9 +7,6 @@ import android.support.v4.app.FragmentActivity;
 
 import com.example.home.makemebeautiful.R;
 
-/**
- * Created by home on 5/3/2016.
- */
 public class FragmentBuilder {
 
     private Context context;

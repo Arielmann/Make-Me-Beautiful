@@ -14,9 +14,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by home on 7/22/2016.
- */
 public class ContactedUsersModel {
 
     /*

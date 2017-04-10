@@ -17,7 +17,7 @@
         android:label="@string/app_name"
         android:largeHeap="true"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/MMBAppTheme">
         <activity
             android:name=".homescreen.WelcomeScreenActivity"
             android:launchMode="singleTop"

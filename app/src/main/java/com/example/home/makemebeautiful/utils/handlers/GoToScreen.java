@@ -41,7 +41,7 @@ public class GoToScreen implements View.OnClickListener {
         @Override
         public void onClick(View v) {
             final ProgressDialog progressDialog = new ProgressDialog(activity,
-                    R.style.AppTheme);
+                    R.style.MMBAppTheme);
             progressDialog.setIndeterminate(true);
             progressDialog.setMessage(dialogMessage);
             progressDialog.show();

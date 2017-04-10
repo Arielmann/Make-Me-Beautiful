@@ -22,16 +22,16 @@ public class ChatImagesController extends IChatController implements OnImageUplo
     * NOTE: this class checks every time if the
     * sent ChatItem is the first message of this user
     * (by checking if it exists in the contactedUserHashMap or in the database).
-    * if it's true (trying to retrieve the contact return null),
+    * if it's true (trying to retrieve the contact returns null),
     * it will save it in the database
-    * */
+    */
+
     //TODO: improve the mentioned above method, should be ONE PURPOSE
 
     private ChatDataModel model;
     private static final String TAG = "Chat images controller";
 
     public ChatImagesController(ChatDataModel model) {
-
         this.model = model;
     }
 

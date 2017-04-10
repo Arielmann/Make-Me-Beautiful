@@ -54,7 +54,7 @@ public class SetProfileImageModel implements View.OnClickListener, OnImageUpload
         public void onClick(View v) {
             //Progress dialog will appear until server finish uploading
             progressDialog = new ProgressDialog(activity,
-                    R.style.AppTheme);
+                    R.style.MMBAppTheme);
             progressDialog.setIndeterminate(true);
             progressDialog.setMessage("Saving Data");
             progressDialog.show();
