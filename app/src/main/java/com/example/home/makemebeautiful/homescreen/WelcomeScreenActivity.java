@@ -70,9 +70,7 @@ public class WelcomeScreenActivity extends AppCompatActivity {
         AppDataInit.initAppDataWithProgDialog(this, toolbarFrag);
         try {
             AppDataInit.readStylistsFromServer(this);
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
+        } catch (ExecutionException | InterruptedException e) {
             e.printStackTrace();
         }
     }

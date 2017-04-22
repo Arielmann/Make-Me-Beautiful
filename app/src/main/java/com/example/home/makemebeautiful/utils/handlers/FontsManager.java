@@ -10,7 +10,9 @@ public class FontsManager {
 
         MONTSERRAT_BOLD("fonts/Montserrat-Bold.ttf"),
         MONTSERRAT_REGULAR("fonts/Montserrat-Regular.ttf"),
-        QUIRLYCUES("fonts/Quirlycues.ttf");
+        QUIRLYCUES("fonts/Quirlycues.ttf"),
+        MYRIAD_PRO_REGULAR("fonts/Myriad_Pro-Regular.ttf"),
+        LATO_REGULAR("fonts/Lato-Regular.ttf");
 
         final String fontName;
 

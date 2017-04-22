@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.home.makemebeautiful.R;
+import com.example.home.makemebeautiful.resources.AppStrings;
 import com.example.home.makemebeautiful.utils.handlers.GoToScreen;
 import com.example.home.makemebeautiful.utils.imageutils.ImageUtils;
 import com.example.home.makemebeautiful.utils.imageutils.fragments.Dialogs.ChooseImageSourceDialog;
@@ -19,24 +20,21 @@ import com.example.home.makemebeautiful.homescreen.WelcomeScreenActivity;
 
 import java.util.concurrent.ExecutionException;
 
-/**
- * Created by home on 8/9/2016.
- */
-public class SetProfileImageModel implements View.OnClickListener, OnImageUploadedToServer, OnPushNotificationSent {
+class SetProfileImageModel implements View.OnClickListener, OnImageUploadedToServer, OnPushNotificationSent {
 
      /*
     * This model handels the saving of the user's profile image
     * */
 
     private final Activity activity;
-    private String profileImageFilePathForLocalSaving = "Profile image is unset";
-    private String profileImagePathForUploading = "Profile image is unset";
+    private String profileImageFilePathForLocalSaving = AppStrings.NO_FILE_PATH;
+    private String profileImagePathForUploading = AppStrings.NO_FILE_PATH;
     private final ChooseImageSourceDialog choicesDialog;
     private final String alertBoxTitle = "Choose Profile Picture!";
     ProgressDialog progressDialog;
     private Uri profileImageUriForUploading;
 
-    public SetProfileImageModel(Activity activity) {
+    SetProfileImageModel(Activity activity) {
         this.activity = activity;
         choicesDialog = new ChooseImageSourceDialog(activity, alertBoxTitle, ImageUtils.chooseImageAlertBoxItems);
     }
@@ -49,7 +47,7 @@ public class SetProfileImageModel implements View.OnClickListener, OnImageUpload
     }
 
     //****User has chosen an image. Save it to sharePref and go to welcomeScreen******
-    protected View.OnClickListener saveImage = new View.OnClickListener() {
+    View.OnClickListener saveImage = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             //Progress dialog will appear until server finish uploading
@@ -63,9 +61,7 @@ public class SetProfileImageModel implements View.OnClickListener, OnImageUpload
             SharedPrefManager.getInstance(activity).saveStringInfoToSharedPreferences(activity, "profileImageFilePath", profileImageFilePathForLocalSaving);
             try {
                 uploadProfileImage(); //FIXME: should not happen here but in the next screen
-            } catch (ExecutionException e) {
-                e.printStackTrace();
-            } catch (InterruptedException e) {
+            } catch (ExecutionException | InterruptedException e) {
                 e.printStackTrace();
             }
         }
@@ -84,9 +80,19 @@ public class SetProfileImageModel implements View.OnClickListener, OnImageUpload
     }
 
     private void uploadProfileImage() throws ExecutionException, InterruptedException {
-        UploadImage profileImageUploader = new UploadImage(activity, this, profileImagePathForUploading, profileImageUriForUploading);
-        profileImageUploader.execute();
+        if (validateFile(profileImagePathForUploading)) {
+            UploadImage profileImageUploader = new UploadImage(activity, this, profileImagePathForUploading, profileImageUriForUploading);
+            profileImageUploader.execute();
+        } else {
+            saveUserToServer();
+        }
     }
+
+    //will use default image if fails
+    private boolean validateFile(String path) {
+        return !path.equals(AppStrings.NO_FILE_PATH);
+    }
+
 
     @Override
     public void handleServerImageUrl(String profileImageUrl, String profileImageFilePath, Uri rotatedImageForDelete) {

@@ -5,4 +5,5 @@
     <color name="colorAccent">#ff4081</color>
     <color name="hintColor">#939393</color>
     <color name="registration_text_color">#FFFFFF</color>
+    <color name="stylist_details_color">#000000</color>
 </resources>

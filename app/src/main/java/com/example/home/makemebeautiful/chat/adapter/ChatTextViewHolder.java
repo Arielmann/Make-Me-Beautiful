@@ -8,15 +8,12 @@ import com.example.home.makemebeautiful.chat.model.ChatItem;
 
 import java.util.List;
 
-/**
- * Created by home on 6/28/2016.
- */
-public class ChatTextViewHolder extends GenericViewHolder {
+class ChatTextViewHolder extends GenericViewHolder {
+
     private final View view;
-    private TextView chatTextView;
     private List<ChatItem> dataSet;
 
-    public ChatTextViewHolder(View itemView, List<ChatItem> dataSet) {
+    ChatTextViewHolder(View itemView, List<ChatItem> dataSet) {
         super(itemView);
         this.view = itemView;
         this.dataSet = dataSet;
@@ -25,10 +22,13 @@ public class ChatTextViewHolder extends GenericViewHolder {
     @Override
     public void setUIDataOnView(int position) {
         int finalViewTypeValue = dataSet.get(position).getFinalViewValue();
-        chatTextView = (TextView) view.findViewById(finalViewTypeValue);
+        String senderName = dataSet.get(position).getSenderName();
+        TextView messageTV = (TextView) view.findViewById(finalViewTypeValue);
+        TextView senderNameTV = (TextView) view.findViewById(R.id.textSenderName);
         String message = dataSet.get(position).getTextMessage();
         if (message != null) {
-            this.chatTextView.setText(message);
+            senderNameTV.setText(senderName);
+            messageTV.setText(message);
         }
     }
 }

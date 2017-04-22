@@ -40,9 +40,9 @@ class StylistDetailsModel {
 
     private void initTextViewsInfo(){
         textViewsDetails[0] = new TextViewDetails(R.id.stylistNameInDetailsScreen, FontLoader.MONTSERRAT_BOLD, addressedStylist.getName());
-        textViewsDetails[1] = new TextViewDetails(R.id.companyInDetailsScreen, FontLoader.MONTSERRAT_REGULAR, addressedStylist.getCompany());
-        textViewsDetails[2] = new TextViewDetails(R.id.locationInDetailsScreen, FontLoader.MONTSERRAT_REGULAR, addressedStylist.getLocation());
-        textViewsDetails[3] = new TextViewDetails(R.id.websiteInDetailsScreen, FontLoader.MONTSERRAT_REGULAR, addressedStylist.getWebsite());
-        textViewsDetails[4] = new TextViewDetails(R.id.descriptionInDetailsScreen, FontLoader.MONTSERRAT_REGULAR, addressedStylist.getDescription());
+        textViewsDetails[1] = new TextViewDetails(R.id.companyInDetailsScreen, FontLoader.MONTSERRAT_BOLD, addressedStylist.getCompany());
+        textViewsDetails[2] = new TextViewDetails(R.id.locationInDetailsScreen, FontLoader.LATO_REGULAR, addressedStylist.getLocation());
+        textViewsDetails[3] = new TextViewDetails(R.id.websiteInDetailsScreen, FontLoader.LATO_REGULAR, addressedStylist.getWebsite());
+        textViewsDetails[4] = new TextViewDetails(R.id.descriptionInDetailsScreen, FontLoader.LATO_REGULAR, addressedStylist.getDescription());
     }
 }
