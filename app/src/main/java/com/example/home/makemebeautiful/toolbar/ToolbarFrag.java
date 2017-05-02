@@ -82,8 +82,8 @@ public class ToolbarFrag extends Fragment implements ImageLoader, OnImageLoading
     }
 
     private void buildDrawer(){
-        SecondaryDrawerItem sendPhotoItem = (SecondaryDrawerItem) new SecondaryDrawerItem().withIdentifier(2).withName(R.string.drawer_item_sendPhoto);
-        SecondaryDrawerItem messagesItem = (SecondaryDrawerItem) new SecondaryDrawerItem().withIdentifier(2).withName(R.string.drawer_item_messages);
+        SecondaryDrawerItem sendPhotoItem = (SecondaryDrawerItem) new SecondaryDrawerItem().withIdentifier(0).withName(R.string.drawer_item_sendPhoto);
+        SecondaryDrawerItem messagesItem = (SecondaryDrawerItem) new SecondaryDrawerItem().withIdentifier(1).withName(R.string.drawer_item_messages);
         //SecondaryDrawerItem settingsItem = (SecondaryDrawerItem) new SecondaryDrawerItem().withIdentifier(2).withName(R.string.drawer_item_settings);
         sendPhotoItem.withOnDrawerItemClickListener(goToChooseStylistScreen);
         messagesItem.withOnDrawerItemClickListener(goToContactedUsersScreen);

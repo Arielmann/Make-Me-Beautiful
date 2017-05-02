@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/welcome_image_and_layer"
     tools:context=".homescreen.WelcomeScreenActivity">
+   <!-- android:fitsSystemWindows="true"-->
 
     <fragment
         android:id="@+id/toolbarFragInWelcomeScreen"

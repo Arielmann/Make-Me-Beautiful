@@ -48,10 +48,7 @@
             android:name=".profile.registration.profileimage.SetProfileImageActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".client_user.GetAppInfo"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait" />
+
         <activity
             android:name=".profile.registration.basic.RegisterBasicProfileActivity"
             android:launchMode="singleTop"

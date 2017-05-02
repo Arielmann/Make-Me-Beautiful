@@ -13,6 +13,7 @@ import com.example.home.makemebeautiful.appinit.AppDataInit;
 import com.example.home.makemebeautiful.choosestylist.choosing_screen.ChooseStylistActivity;
 import com.example.home.makemebeautiful.profile.registration.basic.RegisterBasicProfileActivity;
 import com.example.home.makemebeautiful.profile.sharedprefrences.SharedPrefManager;
+import com.example.home.makemebeautiful.resources.AppStrings;
 import com.example.home.makemebeautiful.toolbar.ToolbarFrag;
 import com.example.home.makemebeautiful.utils.handlers.FontsManager;
 import com.example.home.makemebeautiful.utils.handlers.FontsManager.FontLoader;
@@ -28,14 +29,12 @@ public class WelcomeScreenActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setTheme(R.style.MMBAppTheme);
+        setTheme(R.style.MaterialTheme_TranslucentStatus);
         super.onCreate(savedInstanceState);
         //AppDataInit.initCrashesMonitor(this);
         setContentView(R.layout.activity_welcome_screen);
-
         toolbarFrag = (ToolbarFrag) getSupportFragmentManager().findFragmentById(R.id.toolbarFragInWelcomeScreen);
         setUpTextViewsFonts();
-
         //Check if registration is required
         if (SharedPrefManager.getInstance(this).getUserName().equals("user name error")) {
             goToRegistrationScreen();
@@ -46,9 +45,7 @@ public class WelcomeScreenActivity extends AppCompatActivity {
                 Button goToChooseStylistButton = (Button) findViewById(R.id.goToChooseStylistScreen);
                 GoToScreen goToChooseStylistAction = new GoToScreen(this, ChooseStylistActivity.class);
                 goToChooseStylistButton.setOnClickListener(goToChooseStylistAction);
-            } catch (ExecutionException e) {
-                e.printStackTrace();
-            } catch (InterruptedException e) {
+            } catch (ExecutionException | InterruptedException e) {
                 e.printStackTrace();
             }
         }
@@ -75,4 +72,5 @@ public class WelcomeScreenActivity extends AppCompatActivity {
         }
     }
 }
+
 
