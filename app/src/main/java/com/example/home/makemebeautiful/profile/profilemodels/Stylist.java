@@ -1,8 +1,8 @@
 package com.example.home.makemebeautiful.profile.profilemodels;
 
-/**
- * Created by home on 4/3/2016.
- */
+import org.parceler.Parcel;
+
+@Parcel
 public class Stylist extends User {
     private String company;
     private String website;
@@ -11,6 +11,11 @@ public class Stylist extends User {
         super(id, name, location, profileImageUrl, description, token);
         this.company = company;
         this.website = website;
+    }
+
+    //For Parcelable
+    public Stylist() {
+        super();
     }
 
     public java.lang.String getCompany() {

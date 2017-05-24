@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -16,9 +17,11 @@ import android.widget.TextView;
 
 import com.example.home.makemebeautiful.R;
 import com.example.home.makemebeautiful.profile.profilemodels.Stylist;
+import com.example.home.makemebeautiful.resources.AppStrings;
 import com.example.home.makemebeautiful.utils.handlers.FontsManager;
 
 import org.greenrobot.eventbus.EventBus;
+import org.parceler.Parcels;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -27,17 +30,30 @@ public class StylistDetailsFrag extends Fragment {
     private View stylistDetailsLayout;
     private StylistDetailsModel model;
     private Button goToChatScreen;
+    private Stylist addressedStylist;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         stylistDetailsLayout = inflater.inflate(R.layout.frag_stylist_details, null);
         goToChatScreen = (Button) stylistDetailsLayout.findViewById(R.id.goToChatScreen);
+        if(savedInstanceState != null){
+            Stylist addressedUser = Parcels.unwrap(savedInstanceState.getParcelable(AppStrings.ADDRESSED_USER));
+            EventBus.getDefault().postSticky(addressedUser);
+        }
         return stylistDetailsLayout;
     }
 
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Parcelable wrappedAddressedUser = Parcels.wrap(addressedStylist);
+        outState.putParcelable(AppStrings.ADDRESSED_USER, wrappedAddressedUser);
+    }
+
     protected void initVars() {
-        Stylist addressedStylist = EventBus.getDefault().removeStickyEvent(Stylist.class);
+        addressedStylist = EventBus.getDefault().removeStickyEvent(Stylist.class);
         model = new StylistDetailsModel(this, addressedStylist);
         setImageInViews(stylistDetailsLayout);
         goToChatScreen.setOnClickListener(model.getOnStylistClickedForSendImages());

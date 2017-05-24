@@ -48,6 +48,9 @@ public class ChatTextMessagesController extends IChatController {
             ContactedUsersRowsHashMap.getInstance().getHashMap().get(addressedUserName).setLastMessageAsText(item);
             ContactedUsersRowsHashMap.getInstance().getHashMap().get(addressedUserName).setLastMessageAsDate(item);
             ContactedUsersModel.getInstance(model.getContext()).initDataSet();
+            if(ContactedUsersModel.getInstance(model.getContext()).getAdapter() == null) {
+                ContactedUsersModel.getInstance(model.getContext()).setAdapter();
+            }
             ContactedUsersModel.getInstance(model.getContext()).getAdapter().notifyDataSetChanged();
 
         }else {

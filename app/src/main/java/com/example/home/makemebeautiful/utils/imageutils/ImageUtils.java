@@ -190,7 +190,7 @@ public class ImageUtils {
     public static void initDefaultProfileImage(Context context) {
         defaultProfileImage = BitmapFactory.decodeResource(context.getResources(),
                 R.drawable.female_icon);
-        SharedPrefManager.getInstance(null).setUserImageBitmap(defaultProfileImage);
+        SharedPrefManager.getInstance(context).setUserImageBitmap(defaultProfileImage);
     }
 
    /* public static void createImageFromResource(Context context, int res, Bitmap imageTarget, int targetImageHeight, int targetImageWidth) {

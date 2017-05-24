@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -12,6 +13,7 @@ import android.widget.FrameLayout;
 //import com.example.home.makemebeautiful.chat.fragments.AddressedUserChatDetailsFrag;
 import com.example.home.makemebeautiful.chat.model.MessageItemsFromServer;
 import com.example.home.makemebeautiful.profile.sharedprefrences.SharedPrefManager;
+import com.example.home.makemebeautiful.resources.AppStrings;
 import com.example.home.makemebeautiful.utils.handlers.FragmentBuilder;
 import com.example.home.makemebeautiful.R;
 import com.example.home.makemebeautiful.chat.controllers.ChatImagesController;
@@ -26,6 +28,7 @@ import com.example.home.makemebeautiful.utils.imageutils.fragments.FullScreenIma
 import com.example.home.makemebeautiful.profile.profilemodels.Stylist;
 
 import org.greenrobot.eventbus.EventBus;
+import org.parceler.Parcels;
 
 import java.util.concurrent.ExecutionException;
 
@@ -61,6 +64,10 @@ public class ChatActivity extends AppCompatActivity implements OnTextTransferred
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
+        if(savedInstanceState != null){
+            Stylist addressedUser = Parcels.unwrap(savedInstanceState.getParcelable(AppStrings.ADDRESSED_USER));
+            EventBus.getDefault().postSticky(addressedUser);
+        }
         initActivity();
     }
 
@@ -68,6 +75,19 @@ public class ChatActivity extends AppCompatActivity implements OnTextTransferred
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         initActivity();
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Parcelable wrappedAddressedUser = Parcels.wrap(addressedUser);
+        outState.putParcelable(AppStrings.ADDRESSED_USER, wrappedAddressedUser);
     }
 
     private void initActivity() {

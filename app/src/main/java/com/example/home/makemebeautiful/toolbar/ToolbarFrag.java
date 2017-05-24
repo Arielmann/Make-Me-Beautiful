@@ -96,7 +96,6 @@ public class ToolbarFrag extends Fragment implements ImageLoader, OnImageLoading
         setOnDrawerItemsClickListeners();
     }
 
-
     private void setOnDrawerItemsClickListeners() {
         goToChooseStylistScreen.setDrawer(drawer);
         goToContactedUsersScreen.setDrawer(drawer);

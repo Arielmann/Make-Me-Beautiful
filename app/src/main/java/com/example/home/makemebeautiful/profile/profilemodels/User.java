@@ -4,11 +4,11 @@ import android.graphics.Bitmap;
 
 import com.example.home.makemebeautiful.utils.imageutils.ImageUtils;
 
+import org.parceler.Parcel;
+
 import java.io.Serializable;
 
-/**
- * Created by home on 4/14/2016.
- */
+@Parcel
 public class User implements Serializable {
 
     private int id;
@@ -32,6 +32,9 @@ public class User implements Serializable {
         this.userImageBitmap = ImageUtils.defaultProfileImage;
         //this.profileImagePath = "file path was not define (init is in User class)";
     }
+
+    //For Parcelable
+    public User() {}
 
 
     //*******************Getters****************************//
