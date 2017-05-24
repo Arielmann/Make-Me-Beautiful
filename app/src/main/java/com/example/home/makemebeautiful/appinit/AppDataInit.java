@@ -62,8 +62,6 @@ public class AppDataInit {
     }
 
     public static void initAppData(Context context) {
-        //TODO: ReadStylistsFromServer is not yet included within method
-        //initProfileImageHeader();
         ImageUtils.initDefaultProfileImage(context);
         initChatData(context);
         initContactedUsersAdapter(context);
