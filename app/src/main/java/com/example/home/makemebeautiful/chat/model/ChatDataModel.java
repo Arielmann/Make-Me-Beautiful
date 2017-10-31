@@ -10,6 +10,7 @@ import com.example.home.makemebeautiful.contactedusers.sqlite.ContactedStylistTa
 import com.example.home.makemebeautiful.dbmanager.DataBaseManager;
 import com.example.home.makemebeautiful.profile.profilemodels.Stylist;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ChatDataModel {
@@ -19,7 +20,7 @@ public class ChatDataModel {
     private ChatAdapter adapter;
     private LinearLayoutManager layoutManager;
     private Stylist addressedUser;
-    private List<ChatItem> chatItems;
+    private List<ChatItem> chatItems = new ArrayList<>();
 
     public ChatDataModel(Context context, Stylist addressedUser) {
         this.context = context;

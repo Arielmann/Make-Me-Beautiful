@@ -140,7 +140,9 @@ public class ChatActivity extends AppCompatActivity implements OnTextTransferred
             getSupportFragmentManager().beginTransaction().remove(fullScreenImageFrag).commit();
         } else {
             Log.d(TAG, "Closing chat activity");
-            EventBus.getDefault().postSticky(addressedUser);
+            if(addressedUser != null) {
+                EventBus.getDefault().postSticky(addressedUser);
+            }
             super.onBackPressed();
         }
     }

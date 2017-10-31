@@ -15,9 +15,6 @@ class Config {
     public static final String IMAGE_DIRECTORY_NAME = "Android File Upload";
 
     //GCM connection data
-    public static final String API_KEY = "AIzaSyBoX4oeiq2LFbvq11Z_v701RuauMvIyeDE";
-   // public static final String API_KEY = "AIzaSyCA-6MVXKIg_9c99ymwB4kjNleFVA0P11Y";
-   // static final String SENDER_ID = "824972538571";
     static final String SENDER_ID = "3328322017";
 
 }

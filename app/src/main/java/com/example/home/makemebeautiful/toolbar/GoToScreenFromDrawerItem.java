@@ -7,9 +7,6 @@ import android.view.View;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
-/**
- * Created by home on 7/25/2016.
- */
 public class GoToScreenFromDrawerItem implements Drawer.OnDrawerItemClickListener {
 
 
