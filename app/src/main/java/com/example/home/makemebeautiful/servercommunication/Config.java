@@ -11,15 +11,10 @@ class Config {
     static final String IMAGE_UPLOADS = SERVER_URL + "ImageUpload.php";
     static final String READ_ALL_STYLISTS = SERVER_URL + "ReadAllStylistsFromServer.php";
 
-    // Directory name to store captured images KEYS and videos
-    public static final String IMAGE_DIRECTORY_NAME = "Android File Upload";
-
     //GCM connection data
     static final String SENDER_ID = "3328322017";
 
 }
-
-//AIzaSyANtVMIH84UFyTUx19LumHkTWCLl_Q6u0g
 
 /*
    * API key inputStream generated on console and inputStream used by 3rd
